@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      /*
+      配色方案
+      背景 rgb(224,207,254) rgb(255,239,255)
+      按钮 rgb(181,154,254), rgb(245,189,253)
+    */
+      @font-face {
+        font-family: diy;
+        src: url("./方正-喵呜.TTF");
+      }
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(
+            45deg,
+            rgb(181, 154, 254),
+            rgb(245, 189, 253)
+          )
+          fixed;
+        font-family: diy;
+      }
+
+      .container {
+        position: relative;
+        width: 70rem;
+      }
+      .container img {
+        width: 70rem;
+      }
+
+      .panel {
+        width: 30%;
+        margin: 10rem 0 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+
+        /* d:f jcc */
+        display: flex;
+        justify-content: center;
+      }
+      .switch span {
+        color: #ccc;
+        font-size: 1.4rem;
+      }
+      .switch span.active {
+        color: rgb(224, 207, 254);
+      }
+
+      .login .input#email,
+      .login .input#repeat {
+        margin: 0;
+        height: 0;
+        opacity: 0;
+      }
+
+      .signup .input#email,
+      .signup .input#repeat {
+        /* display: block; */
+        opacity: 1;
+        height: 2rem;
+        margin: 2rem 0;
+      }
+
+      form {
+        width: 12rem;
+        margin: 2rem 0 0;
+      }
+      form .input {
+        position: relative;
+        width: 100%;
+        margin: 2rem 0;
+        opacity: 1;
+        height: 2rem;
+        transition: 0.6s;
+      }
+      .input input {
+        outline: none;
+        width: 100%;
+        border: none;
+        border-bottom: 0.1rem solid rgb(101, 154, 254);
+      }
+      .input::after {
+        content: attr(placeholder);
+        position: absolute;
+        left: 0;
+        top: -20%;
+        font-size: 1.3rem;
+        color: rgb(129, 101, 207);
+        transition: 0.3s;
+      }
+
+      .input.focus::after {
+        top: -70%;
+        font-size: 1rem;
+      }
+
+      form span {
+        display: block;
+        color: rgb(109, 66, 226);
+        font-size: 0.8rem;
+        cursor: pointer;
+      }
+      form button {
+        outline: none;
+        border: none;
+        margin: 2rem 0 0;
+        width: 100%;
+        height: 3.5rem;
+        border-radius: 3rem;
+        font-family: diy;
+        background: linear-gradient(
+          90deg,
+          rgb(181, 154, 254),
+          rgb(245, 189, 253)
+        );
+        box-shadow: 0 0 8px rgb(181, 154, 253);
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img src="bg.jpg" alt="" />
+      <div class="panel">
+        <div class="content login">
+          <div class="switch">
+            <span id="login" class="active">注册</span><span>/</span
+            ><span id="signup">登陆</span>
+          </div>
+          <form action="">
+            <div id="email" class="input" placeholder="邮箱">
+              <input type="text" />
+            </div>
+            <div class="input" placeholder="用户名">
+              <input type="text" />
+            </div>
+            <div class="input" placeholder="密码">
+              <input type="text" />
+            </div>
+            <div id="repeat" class="input" placeholder="再次输入密码">
+              <input type="text" />
+            </div>
+            <span>Forget?</span>
+            <button>Login</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script>
+      $("#login").click(function() {
+        $(".switch span").removeClass("active");
+        $(this).addClass("active");
+
+        console.log($(this).parents(".content"));
+        $(this)
+          .parents(".content")
+          .removeClass("signup");
+        $(this)
+          .parents(".content")
+          .addClass("login");
+      });
+
+      $("#signup").click(function() {
+        $(".switch span").removeClass("active");
+        $(this).addClass("active");
+
+        $(this)
+          .parents(".content")
+          .removeClass("login");
+        $(this)
+          .parent(".content")
+          .addClass("signup");
+      });
+
+      // 有 bug 直接点击文字的时候 没反应
+
+      $(".input input").on("focus", function() {
+        $(this)
+          .parent()
+          .addClass("focus");
+      });
+
+      $(".input input").on("blur", function() {
+        $(this)
+          .parent()
+          .removeClass("focus");
+      });
+    </script>
+  </body>
+</html>
