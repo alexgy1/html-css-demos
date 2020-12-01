@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <!-- 用base的时候 a标签里面就不用写了额 -->
+  <base target="_blank">
+</head>
+<body>
+    <a name="top"></a>
+  <a href="http://google.com" target="_blank">go google 新开tab页面跳转</a>
+  <a href="http://google.com" >go google _self当前页面跳转 默认就是这个  </a>
+  <p>a 标签用于页面跳转 html html之间跳转 打开新的页面</p>
+  <p>a 标签包裹 图片或者文字 实现跳转</p>
+  <p>hash </p>
+  <p>阻止a标签跳转 </p>
+  <p>target 控制如何跳转 _self _blank </p>
+  <p>title 控制 鼠标悬停的时候的文本</p>
+  <a href="4.综合.html">4.综合.html</a>
+
+
+  请注意，链接会在新窗口中打开，即使链接中没有 target="_blank" 属性。这是因为 base 元素的 target 属性已经被设置为 "_blank" 了。
+  <p>
+    <a href="#">href="#" #会返回顶部 ：不会</a>
+    <a href="javascript:">href="javascript:;"</a>
+
+    
+  </p>
+  <a href="6.ahash.html#middle" >去新页面的指定位置 但是没有动画</a> <br>
+  <a href="#top">Back to top</a> 
+  <p>https://stackoverflow.com/questions/32102747/how-to-make-a-back-to-top-button-using-css-and-html-only</p>
+</body>
+</html>

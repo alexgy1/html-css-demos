@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!-- form action 告诉提交到哪个服务器 name会被拼接到url里面 
+  
+  隐藏域 input type = hidden  不会显示在页面中 但是会收集用户信息
+
+默认情况 文字和输入框是没有关联的 需要label标签实现
+label for  和输出框的id相同即可  两个标签要并列 且label里面的文字要放进去
+
+datalist 了解即可恶-->
+  <form action="http://www.baidu.com">
+    <label for="name1"> name: </label> <input type="text" id="name1">
+    <label for="pass"> password: </label> <input type="text" id="pass">
+    <hr>
+   <label for="name">  姓名 <input type="text"  name="name" id=name></label> <br>
+     密码 <input type="password" name="" id=""><br>
+     <input type="reset" value="reset">默认是重置 可以用value 指定新的值 必须在form里面才生效
+     <input type="reset" >
+    <p>input type button </p>
+    <input type="button" value="按钮" onclick="alert('alex')">
+    <p>input type image 定义图片按钮</p>
+    <input type="image" src="../6-paiyipai/girl.jpeg" onclick="alert('alex')">
+    <input type="hidden" name="this is  hidden " value="asddd">
+    <input type="submit">
+  </form>
+
+  <hr>
+  <h2>datalist</h2>
+  <input type="text" placeholder="请输入你的车型" list="cars">
+  <datalist id="cars">
+    <option >奔驰</option>
+    <option >宝马</option>
+    <option >奥迪</option>
+    <option >路虎</option>
+  </datalist>
+
+  <hr>
+  <input type="email">邮箱的校验
+  <input type="url" name="" id="">  网址
+  电话号码 <input type="number" >
+  时间 <input type="date" name="" id="">
+  color <input type="color" name="" id="">
+
+
+  <hr>
+  <h2>select 定义下拉列表   下拉列表不能输入内容 但是可以选择 可以设置默认值 selected</h2>
+
+  <select name="" id="">
+    <option value="">bmw</option>
+    <option selected ="selected">benz</option>
+  </select>
+  <h2>下拉列表分类</h2>
+  <select name="" id="">
+    <optgroup label="北京">
+      <option value="">朝阳区</option>
+      <option value="">东城区</option>
+    </optgroup>
+    <optgroup label="广州">
+        <option value="">天河区</option>
+        <option value="">黄埔区</option>
+    </optgroup>
+  </select>
+
+  <hr>
+  <textarea name="" id="" cols="40" rows="10" >
+    内容 默认情况可以无限换行 宽高可以修改  cols rows
+  </textarea>
+</body>
+</html>

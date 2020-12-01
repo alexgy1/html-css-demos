@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h2>表单 作用就是收集用户信息 一般用于注册 登陆 中后台的提交页面 问卷调查等等</h2>
+  <form action="">
+    <label for="name">
+      名字： 
+      <input type="text" placeholder="please input name " id="name"  value="alex">
+    </label>
+    <label for="password">
+      密码：
+      <input type="password" name="password" id="password">
+    </label>
+   <p> 
+      选择性别： 男
+      <input type="radio" name="sex" id="">
+      女
+      <input type="radio" name="sex" id="">
+      
+  </p>
+  <p> 
+    默认选中
+      选择性别： 男
+      <input type="radio" name="sex1" id="" checked>
+      女
+      <input type="radio" name="sex1" id="">
+      
+  </p>
+  <p>
+    爱好
+    <input type="checkbox" name="" id="">篮球
+    <input type="checkbox" name="" id="" checked>足球
+    <input type="checkbox" name="" id="" checked>网球
+  </p>
+  </form>
+
+  <ul>
+    <li>
+      value 设置默认值
+    </li>
+    <li>单选框 type radio 默认不互斥  加name属性 并且值一致 checked默认选中</li>
+  </ul>
+</body>
+</html>

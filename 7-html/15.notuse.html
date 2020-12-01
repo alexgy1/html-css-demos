@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .one{
+      font-weight: bold
+    }
+    .two{
+      text-decoration: underline
+    }
+    .three{
+      font-size: italic
+    }
+    .four{
+      text-decoration: line-through
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    1. 为什么有的标签被废弃了
+    标签只有一个作用 添加语义
+
+    早期一部分没有语义 所以现在被废弃了
+
+    br hr font
+    b u i s
+
+    b blod
+    u undereline
+    i italic 
+    s strikethorugh  
+
+    企业开发不到万不得已不要用 
+    用的话 css的钩子 使用
+    
+    strong b
+    int u
+    em i
+    del s 
+
+   -->
+   <b>我是文字b </b>
+   <u>我是文字 u</u>
+   <i>我是文字 i</i>
+   <s>我是文字s</s>
+   <hr>
+   <strong>我是strong 定义重要性</strong>
+   <ins>我是ins 定义插入 inserted</ins>
+   <em>我是em 定义强调的文字 emphasized</em>
+   <del> 我是del 定义被删除的文字delete </del>
+   <hr>
+   <h2>html只关注 语义 不用关注样式 样式交给css解决</h2>
+   <p class="one">我是文字</p>
+   <p class="two">我是文字</p>
+   <p class="three">我是文字</p>
+   <p class="four">我是文字</p>
+
+   <!-- html 对空格 回车 tab 不敏感  当作一个空格处理   用字符实体处理 &nbsp;
+    html中有的字符是有含义的 不能直接显示 要显示 用字符实体来处理
+
+    &lt; less than
+    &gt; greater than 为什么加& ; 方便浏览器判断开始和结束被
+    &copy;
+  -->
+  我 爱    你  我爱你
+  <hr>
+  我&nbsp;&nbsp;&nbsp;爱你
+  <p>至此 html学习完毕 cool! 给自己点个赞 例如我们学习了 <table> <ul> </p>
+    <p> <table> <ul>  &lt;table &gt; 这样用字符实体才可以显示   </p>
+      <p>&copy; 李江南</p>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <table border width='500px' height="200px" align="center" cellspacing='0' cellpadding='0'>
+    <tr align="center">
+      <td width="50px" align="center">1.1</td>
+      <td>1.2</td>
+    </tr>
+    <tr valign="top">
+        <td >2.1</td>
+        <td  valign="bottom">2.2</td>
+      </tr>
+  </table>
+  <ul>
+    <li>修改td的宽度 不会影响整个宽度 </li>
+    <li>table 加 border 或者width 或者height</li>
+    <li>table align 可以设置水平方向居中</li>
+    <li> 水平方向td tr都设置了 以td为准 </li>
+    <li>垂直方向 tr设置valign 可以控制垂直方向的位置 </li>
+    <li>外边距 就是单元格直接的距离 cellspacing = 2 默认 </li>
+    <li>内边距 就是单元格边框和文字之间的距离  cellpading = 1 默认是1</li>
+      <li>细线表格 table bgcolor  + cellspacing = 1  td bgcolor </li>
+      <li>caption 写在table标签中 否则无效 相对table 居中 紧跟table开始标签后面</li>
+      <li>th 自动居中 加粗</li>
+      <li>table中有两种单元格 td th td是专门存储数据的 th是专门存储当前列的标题</li>
+  </ul>
+
+  <h3>细线表格 table bgcolor  + cellspacing = 1  td bgcolor  了解 后面都是css实现 </h3>
+  <table bgcolor="black"  cellspacing='1'>
+    <tr bgcolor="white">
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr bgcolor="white">
+      <td>你好</td>
+      <td>我是</td>
+      <td>前端</td>
+    </tr>
+  </table>
+
+  <hr>
+
+
+  <table bgcolor="black"  cellspacing='1' width="800px">
+    <caption>  <h2> 今日小说排行榜</h2></caption>
+    <tr bgcolor="white" >
+      <th>排名</th>
+      <th>关键词</th>
+      <th>趋势</th>
+      <th>今日搜索</th>
+      <th>最近七日</th>
+      <th>相关链接</th>
+    </tr>
+    <tr bgcolor="white" align="center">
+      <td>1</td>
+      <td>大事件</td>
+      <td>🔝</td>
+      <td>898080</td>
+      <td>791231239123</td>
+      <td>
+        <a href="#">贴吧</a>
+        <a href="#">图片</a>
+        <a href="#">百科</a>
+      </td>
+    </tr>
+    <tr bgcolor="white" align="center">
+        <td>1</td>
+        <td>大事件</td>
+        <td>🔝</td>
+        <td>898080</td>
+        <td>791231239123</td>
+        <td>
+          <a href="#">贴吧</a>
+          <a href="#">图片</a>
+          <a href="#">百科</a>
+        </td>
+      </tr>
+  </table>
+
+
+  <hr>
+  <h2>单元格合并</h2>
+  <ul>
+    <li>水平方向合并 colspan="2 删除下一个td</li>
+    <li>垂直方向的合并 删除下一row的对应的 owspan="2" td</li>
+    <li>单元格合并都是向后或者向下合并 不能向上或者向前合并</li>
+  </ul>
+  <table bgcolor="black" width="500px" height="300px" cellspacing="1">
+    <tr bgcolor="white">
+      <td colspan="2"></td>
+    
+      <td></td>
+    </tr>
+    <tr bgcolor="white">
+      <td rowspan="2"></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr  bgcolor="white">
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
+
+  <hr>
+  <table bgcolor="black" width="800px" height="50px" cellspacing="1">
+    <tr  bgcolor="white"  align="center">
+      <td rowspan="2">
+        <img src="../6-paiyipai/girl.jpeg" alt="">
+      </td>
+      <td>我是带你一起hold住html5视频教程</td>
+      <td><a href="#">下载</a></td>
+    </tr>
+    <tr  bgcolor="white" align="center">
+     
+      <td>主讲: alex </td>
+      <td></td>
+    </tr>
+  </table>
+
+  <hr>
+  <table bgcolor="black" width="400px" height="10px" cellspacing="1">
+    <caption>alex 新闻图片</caption>
+      <tr  bgcolor="white"  align="center">
+        <td>
+          <img src="../6-paiyipai/girl.jpeg" alt="">
+          <a href="#">美女</a>
+        </td>
+        <td>
+            <img src="../6-paiyipai/girl.jpeg" alt="">
+            <a href="#">美女</a>
+        </td>
+        <td>
+            <img src="../6-paiyipai/girl.jpeg" alt="">
+            <a href="#">美女</a>
+        </td>
+        <td>
+            <img src="../6-paiyipai/girl.jpeg" alt="">
+            <a href="#">美女</a>
+        </td>
+        <td>
+            <img src="../6-paiyipai/girl.jpeg" alt="">
+            <a href="#">美女</a>
+        </td>
+      </tr>
+      <tr  bgcolor="white" align="center">
+          <td>
+              <img src="../6-paiyipai/girl.jpeg" alt="">
+              <a href="#">美女</a>
+            </td>
+            <td>
+                <img src="../6-paiyipai/girl.jpeg" alt="">
+                <a href="#">美女</a>
+            </td>
+            <td>
+                <img src="../6-paiyipai/girl.jpeg" alt="">
+                <a href="#">美女</a>
+            </td>
+            <td>
+                <img src="../6-paiyipai/girl.jpeg" alt="">
+                <a href="#">美女</a>
+            </td>
+            <td>
+                <img src="../6-paiyipai/girl.jpeg" alt="">
+                <a href="#">美女</a>
+            </td>
+      </tr>
+    </table>
+</body>
+</html>
