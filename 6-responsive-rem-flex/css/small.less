@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+}
+
+#layout {
+  display: flex;
+  flex-direction: column;
+  // mobile 改为100%
+  width: 100%;
+  margin: 0 auto;
+
+  #top {
+    width: 100%;
+    flex: 0 0 60px;
+
+    // height: 60px;
+    background-color: yellow;
+  }
+
+  #main {
+    flex: 0 0 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    & div:first-child {
+      // 因为父是row 所以10%是宽度
+      flex: 0 0 100%;
+      list-style: none;
+      background-color: #fff;
+      display: flex;
+      flex-wrap: wrap;
+      border-left: 1px solid white;
+      align-content: flex-start; //设置对齐方式
+
+      li {
+        // flex: 0 0 100%;
+        width: 33%;
+        height: 40px;
+        line-height: 40px; //处理里面文字 垂直居中
+        text-align: center; //文字水平居中
+      }
+    }
+
+    & div:nth-child(2) {
+      flex: 0 0 100%;
+      list-style: none;
+      background-color: #fff;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+
+      li {
+        // width: 30%;
+        flex: 0 0 30%;
+        text-align: center;
+        height: 120px;
+        background-color: yellow;
+        border-bottom: 1px solid skyblue;
+        margin-top: 10px;
+      }
+    }
+  }
+}

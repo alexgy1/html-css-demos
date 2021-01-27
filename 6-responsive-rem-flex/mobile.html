@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      #div0 {
+        display: flex;
+      }
+      #div0 div:nth-child(1) {
+        background-color: yellow;
+        flex: 0 0 50px;
+      }
+      #div0 div:nth-child(2) {
+        background-color: red;
+        /* 1 1 可以扩大 和缩小的 */
+        flex: 1 1 auto;
+      }
+      #div0 div:nth-child(3) {
+        background-color: yellow;
+        flex: 0 0 50px;
+      }
+
+      @media (min-device-width: 400px) and (max-device-width: 500px) {
+        #div0 div:nth-child(2) {
+          background-color: orange;
+        }
+      }
+      @media (min-device-width: 500px) and (max-device-width: 700px) {
+        #div0 div:nth-child(2) {
+          background-color: forestgreen;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    mobile flex: 0 0 20% 是不行的 实现自动伸缩 100 的20% 和1000的 20% 不同
+    所以不行 flex : 1 1 auto 没有高度不显示 要么给div加高度 或者加内容
+    选择加内容得方式 自适应宽度的时候媒体查询是否可用？ 必须的
+
+    <div id="div0">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+    </div>
+  </body>
+</html>

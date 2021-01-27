@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+        什么是响应式布局
+          不同的设备对应不同的html文件
+          意思 不同设备使用不同的页面  自适应布局的方式  通过js判断什么页面
+
+
+
+      */
+
+      //已经废弃了 html 到html 跳转  现在用js实现
+      //js可以判断的设备类型更加详细
+
+      //局部自适应布局 加 媒体查询使用
+      let redirect = () => {
+        let userAgent = navigator.userAgent.toLocaleLowerCase();
+        let device = /ipad|iphone|midp|rv:1.2.3.4|ucweb|android|windows ce|windows mobile/;
+        if (device.test(userAgent)) {
+          //跳转到移动端页面
+          window.location.href = "mobile.html";
+        } else {
+          window.location.href = "pc.html";
+        }
+      };
+      redirect();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      /* div {
+        margin-top: 20px;
+      }
+      label {
+        display: inline-block;
+        width: 200px;
+        text-align: right;
+      }
+      input {
+        padding: 10px 20px;
+        outline: none;
+        border: none;
+        border-bottom: 1px solid orangered;
+        transition: border 0.5s;
+      }
+      input:focus {
+      } */
+
+      #loginForm div {
+        display: flex;
+        /* margin-bottom: 20px; */
+        /* margin-top: 20px; */
+        /* height: 60px; */
+
+        /* 当这个父元素 也是flex的时候 就要这么设置了 要考虑上下文的环境 */
+        flex: 0 0 30px;
+        align-items: flex-start;
+      }
+      #loginForm div label {
+        /* 100px 先写死 根据文字的多少自己定的  */
+
+        /* 再次增加label的内容  但是 不用 flex 0 0 120 看什么效果 发现不能在一行 其实都可以 是宽度没有给够大 */
+        width: 240px;
+        /* flex: 0 0 240px; */
+        text-align: right;
+      }
+
+      /* 处理两个div的间距 
+        1. magin-top or margin-bottom 
+        2. flex  方式  设置高度 以后 我希望dic间距不变 中间一段就算是间距 但是现在变化了 用flex调整
+           去掉display 发现水平方向又不对齐了
+
+           设置display : flex 
+            align-items: 默认是stretch  ;
+
+            改成下面即可
+            align-items: flex-start;
+            or 
+            align-items: flex-end;
+
+
+            结论： 
+            弹性盒子里面子元素的大小不设置的话是随之改变的
+      */
+      #loginForm {
+        display: flex;
+        flex-direction: column;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- html 结构的设计 -->
+    <!-- form > div > (div > (label + input ) + div) -->
+    <form>
+      <div id="loginForm">
+        <div>
+          <label for="name">name:</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="input your name "
+          />
+        </div>
+        <div>
+          <label for="password">password:</label>
+          <input
+            type="text"
+            name="pwassword"
+            id="pwassword"
+            placeholder="input your pwassword "
+          />
+        </div>
+        <div>
+          <label for="password">请再次输入password:</label>
+          <input
+            type="text"
+            name="pwassword"
+            id="pwassword"
+            placeholder="input your pwassword "
+          />
+        </div>
+      </div>
+    </form>
+  </body>
+</html>

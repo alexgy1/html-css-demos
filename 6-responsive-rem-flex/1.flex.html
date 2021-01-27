@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      #div0 {
+        width: 300px;
+        background-color: pink;
+        display: flex;
+       
+        /* flex-wrap: wrap; */
+        /* flex-direction: row ; 是默认值 从左到右 */
+        /* flex-direction: column; */
+        flex-flow: row wrap ;
+      }
+      #div0 div {
+        width: 100px;
+        height: 100px;
+        background-color: yellow;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>
+        fater 500px 四个子元素各100px father display flex 子元素固定宽度
+        怎么让子元素小于父元素的时候 撑满？ 设置flex: 1
+      </li>
+      <li>
+        如果父元素宽度小于子元素总宽度怎么办？ 子元素有宽度的时候
+        且宽度大于总宽度的时候 子元素自动缩小宽度 填满父亲的宽度
+        <ul>
+          <li>
+            如果子元素设置的宽度总和小于父容器的宽度 以子元素设置的宽度为准
+          </li>
+          <li>
+            如果子元素没有宽度 则宽度最小堆积在一起，
+            这时候设置高度只影响高度，如果没设置高度 高度根据里面的内容相符合
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <hr />
+    <h2>flex-wrap 处理换行 子元素在父元素里面是否换行 在父元素里面设置</h2>
+    <ul>
+      <li>flex-flow : <flex-direction> | <flex-wrap> </li>
+    </ul>
+    <!-- div#div0>div{$}*4 -->
+    <div id="div0">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+    </div>
+  </body>
+</html>
