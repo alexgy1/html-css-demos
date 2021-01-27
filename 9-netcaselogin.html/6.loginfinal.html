@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    /* 1. 清空默认边距  reset.css 或者自己手写 */
+    *{
+      margin: 0;
+      padding: 0
+    }
+    /* 2. 清空默认样式 */
+    a{
+      text-decoration: none;
+        color: #ccc;
+    }
+    ul, li{
+      list-style: none;
+    }
+    /* 3. 利用 body设置整个页面的文字信息 大小 字体以及文字颜色 */
+    body{
+      font-size: 12px;
+      font-family: "宋体";
+      color: #ccc;
+    }
+
+      .header{
+        width: 960px;
+        height: 80px;
+        margin: 0 auto;
+        padding-top: 28px;
+        box-sizing: border-box;
+      }
+      .header .logo{
+        width: 644px;
+        height: 27px;
+        background: url('girl.jpeg') no-repeat;
+        background-size: cover;
+        float: left;
+      }
+      .header .logo a{
+        text-decoration: none;
+        height: 27px;
+        width: 130px;
+        display: inline-block; 
+      }
+      .header .links{
+        float: right;
+        width: 200px;
+        height: 27px;
+        text-align: right;
+      } 
+      .header .links a{
+        line-height: 27px;
+      }
+      .content{
+        width: 960px;
+        height: 600px;
+        margin: 0 auto;
+        background: green;
+      }
+      .content .top{
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        width: 960px;
+        height: 38px;
+        background-color: skyblue;
+      }
+      .content .right h1{
+        color: white;
+        font-size: 12px;
+        line-height: 38px;
+        text-indent: 2em;
+      }
+      .content .bottom{
+        width: 960px;
+        height: 562px;
+        background-color: pink;
+      }
+      .content .bottom .article {
+        width: 642px;
+        height: 562px;
+        background-color: #F9F9F9;
+        float: left;
+        padding-top: 50px;
+        padding-left: 80px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-top: none;
+      }
+      .content .bottom .article  .articelTop{
+        width: 560px;
+        height: 60px;
+      }
+      .content .bottom .article  .articelTop ul{
+        width: 412px;
+        height: 34px;
+        line-height: 34px;
+      }
+      .content .bottom .article  .articelTop ul li{
+        float: left;
+        width: 137px;
+        height: 34px;
+        line-height: 34px;
+        text-align: center;
+        background-color: #fff;
+      }
+      .content .bottom .article  .articleBottom{
+        width: 560px;
+        height: 373px;
+      }
+      .content .bottom .article  .articleBottom .line{
+        width: 413px;
+        height: 28px;
+      } 
+      .content .bottom .article  .articleBottom .line  span{
+        float: left;
+        height: 28px;
+        width: 60px;
+      
+        line-height: 28px;
+        text-align: right;
+      }
+      .content .bottom .article  .articleBottom .line  .star{
+        width: 0;
+        color: red
+      }
+      .content .bottom .article  .articleBottom .line div{
+        float: right;
+        height: 28px;
+        width: 333px;
+      }
+
+      .content .bottom .article  .articleBottom .line input{
+        width: 214px;
+        height: 25px;
+      }
+      .content .bottom .article  .articleBottom .line select{
+        width: 100px;
+        height: 28px;
+      }
+
+      .content .bottom .article  .articleBottom  p{
+        margin-left: 80px;
+        line-height: 28px;
+      }
+      .content .bottom .article  .articleBottom  input[type=submit]{
+        width: 119px;
+        height: 27px;
+        border: none;
+        color: white;
+        background-color: green;
+        margin-top: 20px;
+      }
+      .content .bottom .article  .articleBottom .line  .special{
+        width: 330px;
+      }
+      .content .bottom .article  .articleBottom .line .vcodeInput{
+        float: left;
+      }
+      .content .bottom .article  .articleBottom .line img{
+        width: 100px;
+        height: 28px;
+        float: left;
+        margin-left: 15px;
+      }
+      .content .bottom .aside{
+        width: 318px;
+        height: 562px;
+        float: right;
+        background-color: tomato;
+        padding-top: 105px;
+        padding-left: 66px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-top: none;
+      }
+      .footer{
+        width: 960px;
+        height: 48px;
+        margin: 0 auto;
+      }
+      .footer p{
+        text-align: center;
+        line-height: 48px;
+      }
+
+  </style>
+</head>
+<body>
+  
+  <!-- 头部开始 -->
+  <div class="header">
+    <div class="logo">
+      <a href="#" title="alex163免费邮箱"></a><a href="#" title="alex126免费邮箱"></a><a href="#" title="alexyeah.net免费邮箱"></a>
+    </div>
+    <div class="links">
+      <a href="#">了解更多</a>
+      |
+      <a href="#">反馈意见</a>
+    </div>
+  </div>
+  <!-- 头部结束 -->
+  <!-- 内容开始 -->
+  <div class="content">
+    <!-- 内容顶部开始 -->
+    <div class="top">
+      <div class="right"> <h1>欢迎注册无限容量的alex邮箱</h1></div>
+    </div>
+    <!-- 内容顶部结束 -->
+    <!-- 内容底部开始 -->
+    <div class="bottom">
+      <div class="article">
+        <div class="articelTop">
+          <ul>
+            <li>注册字母邮箱</li>
+            <li>注册手机号码</li>
+            <li>邮箱注册</li>
+          </ul>
+        </div>
+        <div class="articleBottom">
+          <div class="line">
+            <span> <span class="star">*</span>邮箱</span>
+            <div>
+              <input type="text" placeholder="建议使用手机号">@<select>
+                <option  value="163.com">163.com</option>
+                <option  value="126.com">126.com</option>
+                <option  value="yeah.net">yeah.net</option>
+              </select>
+            </div>
+          </div>
+          <p>数字或者英文字母 不少于8个字符</p>
+          <div class="line">
+              <span> <span class="star">*</span>密码</span>
+              <div>
+                <input type="password" placeholder="密码" class="special">
+              </div>
+            </div>
+            <p>输入密码</p>
+            <div class="line">
+                <span> <span class="star">*</span>确认密码</span>
+                <div>
+                  <input type="password" placeholder="确认密码" class="special">
+                </div>
+              </div>
+              <p>忘记密码时 可以通过手机号快速找回密码</p>
+              <div class="line">
+                  <span> <span class="star">*</span>邮箱</span>
+                  <div>
+                    <input type="text" class="vcodeInput">
+                    <img src="girl.jpeg" alt="">
+                  </div>
+                </div>
+                <p>数字或者英文字母 不少于8个字符</p>
+            
+              <p>
+                <input type="checkbox"  checked>
+                同意 <a href="#">服务条款</a>和<a href="#">隐私服务个人信息使用政策</a>
+                
+              </p>
+              <p>
+                  <input type="submit" value="立即注册" class="submitBtn">
+              </p>
+        </div>
+      </div>
+      <div class="aside">
+        <img src="girl.jpeg" alt="">
+      </div>
+    </div>
+    <!-- 内容底部结束 -->
+  </div>
+  <!-- 内容结束 -->
+  <!-- 底部开始 -->
+  <div class="footer">
+    <p>
+      <a href="#">关于alex</a>
+      <a href="#">关于alex免费邮箱</a>
+      <a href="#">官方博客</a>
+      <a href="#">客户服务</a>
+      <a href="#">隐私政策</a>
+      | alex版权所有 &copy; alex 2020 
+      </p>
+  </div>
+  <!-- 底部结束 -->
+</body>
+</html>

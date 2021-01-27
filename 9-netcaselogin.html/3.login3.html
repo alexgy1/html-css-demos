@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0
+    }
+      .header{
+        width: 960px;
+        height: 80px;
+        margin: 0 auto;
+        background: red;
+        padding-top: 28px;
+        box-sizing: border-box;
+      }
+      .header .logo{
+        width: 644px;
+        height: 27px;
+        background: url('girl.jpeg') no-repeat;
+        background-size: cover;
+        float: left;
+      }
+      .header .logo a{
+        text-decoration: none;
+        height: 27px;
+        width: 130px;
+        /* background-color: blue; */
+        display: inline-block; 
+      }
+      .header .links{
+        float: right;
+        width: 200px;
+        height: 27px;
+        text-align: right;
+      } 
+      .header .links a{
+        text-decoration: none;
+        color: #ccc;
+        font-size: 12px;
+        line-height: 27px;
+      }
+      .content{
+        width: 960px;
+        height: 600px;
+        margin: 0 auto;
+        background: green;
+      }
+      .content .top{
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        width: 960px;
+        height: 38px;
+        background-color: skyblue;
+      }
+      .content .right h1{
+        color: white;
+        font-size: 12px;
+        line-height: 38px;
+        text-indent: 2em;
+      }
+      .content .bottom{
+        width: 960px;
+        height: 562px;
+        background-color: pink;
+      }
+      .content .bottom .article {
+        width: 642px;
+        height: 562px;
+        background-color: rgb(216, 192, 255);
+        float: left;
+      }
+      .content .bottom .aside{
+        width: 318px;
+        height: 562px;
+        float: right;
+        background-color: tomato;
+        padding-top: 105px;
+        padding-left: 66px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-top: none;
+      }
+      .footer{
+        width: 960px;
+        height: 48px;
+        margin: 0 auto;
+        background: yellow;
+      }
+
+  </style>
+</head>
+<body>
+  <!-- 从上到下 从外向里布局  先写大block 再填充里面的内容 firework 
+  父子关系最好用padding 
+    a 标签有换行  标签不换行就好了
+    左右 用浮动 
+    右浮动没有宽度和高度 要给
+    宽度能装进去文字就行
+    高度跟左边一样
+
+    处理content 分上下 二话不说 先写出来 然后量尺寸 设置宽高
+    背景图片 宽度1px水平平铺  设置圆角
+ 
+    文字 text-intend 2em 或者margin left 
+
+    子元素居中 靠父元素 padddint top left 确定 再修改父元素的bg color
+    还有边框 所以 设置边框 去掉顶部的边框 
+  -->
+  <div class="header">
+    <div class="logo">
+      <a href="#" title="网易163免费邮箱"></a><a href="#" title="网易126免费邮箱"></a><a href="#" title="网易yeah.net免费邮箱"></a>
+    </div>
+    <div class="links">
+      <a href="#">了解更多</a>
+      |
+      <a href="#">反馈意见</a>
+    </div>
+  </div>
+  <div class="content">
+    <div class="top">
+      <div class="right"> <h1>欢迎注册无限容量的网易邮箱</h1></div>
+    </div>
+    <div class="bottom">
+      <div class="article"></div>
+      <div class="aside">
+        <img src="girl.jpeg" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="footer"></div>
+</body>
+</html>
