@@ -1,0 +1,71 @@
+/*
+
+  配色方案
+  背景 7dbfff
+  图标和标签 4298e7
+  遮罩 e4f2ff
+*/
+body {
+  height: 100vh;
+  background-color: #7dbfff;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#tab {
+  width: 600px;
+  height: 150px;
+  background-color: #fff;
+  display: flex;
+  position: relative;
+  /* 去掉上面多余的部分 */
+  overflow: hidden;
+  border-radius: 20px 20px 90px 90px;
+  border: 20px solid white;
+}
+
+.tab-item {
+  z-index: 2;
+  cursor: pointer;
+  width: 130px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: 0.4s;
+}
+.tab-item.active {
+  width: 210px;
+}
+.tab-item_icon {
+  font-size: 34px;
+  color: #4298e7;
+  transition: 0.3s;
+  transform: translate(0, 0px);
+}
+.active .tab-item_icon {
+  transform: translate(0, -10px);
+}
+.tab-item_label {
+  font-size: 20px;
+  color: #4298e7;
+  opacity: 0;
+  user-select: none;
+  transition: 0.3s;
+}
+.active .tab-item_label {
+  opacity: 1;
+}
+.tab-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 210px;
+  background-color: #e4f2ff;
+  transition: 0.3s;
+  border-radius: 20px;
+}

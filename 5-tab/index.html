@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="http://at.alicdn.com/t/font_2210909_fd9fx1p0m05.css
+    "
+    />
+    <link rel="stylesheet" href="tab.css" />
+  </head>
+  <body>
+    <div id="tab">
+      <div
+        class="tab-item"
+        v-for="(icon , index) in icons"
+        :class="{'active' : activeIndex == index}"
+        @click="activeIndex = index"
+      >
+        <i class="tab-item_icon iconfont" :class="icon.icon"></i>
+        <p class="tab-item_label">{{ icon.name }}</p>
+      </div>
+      <div
+        class="tab-overlay"
+        :style="{
+        'left': activeIndex * 130 + 'px'
+      }"
+      ></div>
+    </div>
+    <script src="https://cdn.staticfile.org/vue/2.6.9/vue.js"></script>
+    <script>
+      var app = new Vue({
+        el: "#tab",
+        data() {
+          return {
+            icons: [
+              {
+                icon: "icon-shouye",
+                name: "首页"
+              },
+              {
+                icon: "icon-yonghu",
+                name: "关注"
+              },
+              {
+                icon: "icon-faxian",
+                name: "发现"
+              },
+              {
+                icon: "icon-xiaoxizhongxin",
+                name: "消息中心"
+              }
+            ],
+            activeIndex: 0
+          };
+        },
+        methods: {
+          changeTab(activeTab) {
+            this.activeTab = activeTab;
+          },
+          onSubmit() {
+            console.log("onSubmit");
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
