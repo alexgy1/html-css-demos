@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      .menu {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+
+        display: flex;
+        flex-flow: row wrap;
+      }
+
+      .menu li {
+        height: 40px;
+
+        text-align: center;
+        line-height: 40px;
+        flex: 1 1 100%;
+      }
+
+      .menu li:nth-child(1) {
+        background-color: #39add1;
+      }
+      .menu li:nth-child(2) {
+        background-color: rgb(135, 235, 188);
+      }
+      .menu li:nth-child(3) {
+        background-color: #982551;
+      }
+      .menu li:nth-child(4) {
+        background-color: #e15258;
+      }
+      .menu li:nth-child(5) {
+        background-color: #cc6699;
+      }
+      .menu li:nth-child(6) {
+        background-color: #52ac43;
+      }
+
+      .menu li a {
+        text-decoration: none;
+        color: #fff;
+      }
+
+      @media (max-width: 240px) {
+        .menu li {
+          flex: 1 1 100%;
+        }
+      }
+
+      @media screen and (min-width: 240px) and (max-width: 768px) {
+        .menu li {
+          flex: 1 1 50%;
+        }
+      }
+      @media (min-width: 768px) {
+        .menu {
+          flex-flow: row nowrap;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="menu">
+      <li><a href="#">html</a></li>
+      <li><a href="#">css</a></li>
+      <li><a href="#">js</a></li>
+      <li><a href="#">java</a></li>
+      <li><a href="#">spring</a></li>
+      <li><a href="#">boot</a></li>
+    </ul>
+  </body>
+</html>

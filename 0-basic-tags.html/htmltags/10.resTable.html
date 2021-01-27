@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      .c h1 {
+        font-size: 30px;
+        text-align: center;
+      }
+      table.responsive {
+        /* 去掉border双边问题 */
+        border-collapse: collapse;
+        width: 98%;
+        margin: 0 auto;
+        border: 1px solid #666;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+      }
+      table.responsive th,
+      table.responsive td {
+        border: 1px solid #666;
+        padding: 0.5em 1em;
+      }
+      table.responsive th {
+        background-color: #35b558;
+      }
+      table.responsive .actions a {
+        color: #ff5c00;
+        text-decoration: none;
+        padding: 0 4px;
+      }
+      table.responsive .number,
+      table.responsive .actions {
+        text-align: center;
+      }
+
+      @media (max-width: 480px) {
+        table.responsive {
+          box-shadow: none;
+          border: none;
+        }
+        table.responsive thead {
+          display: none;
+        }
+        table.responsive tr,
+        table.responsive td {
+          display: block;
+          border: none;
+          position: relative;
+        }
+        table.responsive tr {
+          margin-bottom: 1em;
+          box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.2);
+        }
+        table.responsive .number {
+          text-align: left;
+          background: #35b558;
+
+          padding-left: 28%;
+        }
+        table.responsive .number::before {
+          content: "课程序号";
+          position: absolute;
+          left: 0.5em;
+          top: 0.5em;
+          font-weight: bold;
+        }
+
+        table.responsive .name {
+          text-align: left;
+
+          padding-left: 28%;
+        }
+        table.responsive .name::before {
+          content: "课程名称";
+          position: absolute;
+          left: 0.5em;
+          top: 0.5em;
+          font-weight: bold;
+        }
+        table.responsive .actions {
+          position: absolute;
+          right: 0;
+          top: 0;
+        }
+      }
+
+      table.responsive tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+      table.responsive tr:hover {
+        background-color: #ddd;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="c">
+      <h1>alex学院相关课程</h1>
+      <table class="responsive">
+        <caption>
+          明细
+        </caption>
+        <thead>
+          <th>课程序号</th>
+          <th>课程名称</th>
+          <th>课程操作</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="number">10001</td>
+            <td class="name">移动开发</td>
+            <td class="actions">
+              <a href="#">add</a>
+              <a href="#">delete</a>
+            </td>
+          </tr>
+          <tr>
+            <td class="number">10002</td>
+            <td class="name">web开发</td>
+            <td class="actions">
+              <a href="#">add</a>
+              <a href="#">delete</a>
+            </td>
+          </tr>
+          <tr>
+            <td class="number">10003</td>
+            <td class="name">后端开发</td>
+            <td class="actions">
+              <a href="#">add</a>
+              <a href="#">delete</a>
+            </td>
+          </tr>
+          <tr>
+            <td class="number">10004</td>
+            <td class="name">算法工程师</td>
+            <td class="actions">
+              <a href="#">add</a>
+              <a href="#">delete</a>
+            </td>
+          </tr>
+        </tbody>
+        <tfoot></tfoot>
+      </table>
+    </div>
+  </body>
+</html>
