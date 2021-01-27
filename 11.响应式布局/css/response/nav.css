@@ -1,0 +1,79 @@
+header {
+  border-bottom: #5199ff solid 5px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+header .navbar {
+  display: flex;
+  padding: 1rem 0;
+  align-items: center;
+}
+header .navbar .logo {
+  color: #5199ff;
+  margin-right: 20px;
+  font-size: 1.3rem;
+}
+header .navbar .logo + label {
+  display: none;
+}
+header .navbar .logo + label + input {
+  display: none;
+}
+header .navbar .collapse {
+  display: flex;
+  flex-grow: 1;
+}
+header .navbar .collapse .links {
+  display: flex;
+  margin-right: auto;
+}
+header .navbar .collapse .links li {
+  margin: 0 10px;
+}
+header .navbar .collapse .links a {
+  color: #777;
+}
+header .navbar .collapse .links a:hover {
+  color: #333;
+  font-weight: bold;
+}
+header .navbar .collapse .form a {
+  border: 1px solid #5199ff;
+  border-radius: 0.3rem;
+  padding: 0.3rem 1rem;
+  color: #5199ff;
+  margin-right: 5px;
+}
+header .navbar .collapse .form a.form-bg {
+  background-color: #5199ff;
+  color: white;
+}
+@media only screen and (max-width: 960px) {
+  header .navbar {
+    flex-flow: row wrap;
+  }
+  header .navbar .logo {
+    margin-right: auto;
+  }
+  header .navbar .logo + label {
+    display: block;
+    border: solid 1px #ddd;
+    padding: 0.5rem 1rem;
+    color: #555;
+    cursor: pointer;
+  }
+  header .navbar .logo + label + input:checked + .collapse {
+    display: block;
+  }
+  header .navbar .collapse {
+    display: none;
+    flex-flow: column;
+    width: 100%;
+  }
+  header .navbar .collapse .links {
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+  }
+  header .navbar .collapse .links li {
+    margin: 0.5rem 0;
+  }
+}
