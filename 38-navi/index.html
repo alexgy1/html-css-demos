@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      body{
+        font-size: 12px;
+        line-height: 1.7;
+      }
+      li{
+        list-style: none;
+      }
+      #content{
+        width: 800px;
+        margin: 0 auto; 
+        padding: 20px;
+      }
+
+      #content h1{
+        color: #0088bb;
+      }
+      #content .item{
+        padding: 20px;
+        margin-bottom: 20px;
+        border: 1px dotted #0088bb; 
+      }
+      #content .item h2{
+        font-size: 16px;
+        font-weight: bold;
+        border-bottom: 2px solid #0088bb; 
+        margin-bottom: 10px;
+      }
+      #content .item  li{
+        display: inline;
+        margin-right: 10px;
+      }
+
+      #content .item  li a img{
+        width: 230px;
+        height: 230px;
+        border: none; 
+      }
+      #menu{
+        position: fixed;
+        top: 100px;
+        /* 下面两个 让定位在列表右侧 */
+        left: 50%;
+        margin-left: 400px; 
+      }
+      #menu ul li a{
+        display: block;
+        margin: 5px 0 ; 
+        font-weight: bold;
+        font-size: 14px;
+        color: #333;
+        width: 80px;
+        height: 50px;
+        line-height: 50px;  
+        text-decoration: none;
+        text-align: center;
+      }
+      #menu ul li a:hover,  #menu ul li a.current{
+        color:  white ;
+        background-color: #0088bb;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="menu">
+        <ul>
+            <li><a href="#item1" class="current">1F 男装 </a></li>
+            <li><a href="#item2">2F 女装</a></li>
+            <li><a href="#item3">3F 美妆</a></li>
+            <li><a href="#item4">4F 数码</a></li>
+            <li><a href="#item5">5F 母婴</a></li>
+          </ul>
+    </div>
+    <div id="content">
+      <h1>test 购物网站</h1>
+      <div id="item1" class="item">
+        <h2>1F 男装</h2>
+        <ul>
+          <li><a href=""><img src="./xing.jpg" alt=""></a></li>
+          <li><a href=""><img src="./xing.jpg" alt=""></a></li>
+          <li><a href=""><img src="./xing.jpg" alt=""></a></li>
+          <li><a href=""><img src="./xing.jpg" alt=""></a></li>
+          <li><a href=""><img src="./xing.jpg" alt=""></a></li>
+          <li><a href=""><img src="./xing.jpg" alt=""></a></li>
+          <li><a href=""><img src="./xing.jpg" alt=""></a></li>
+          <li><a href=""><img src="./xing.jpg" alt=""></a></li>
+          <li><a href=""><img src="./xing.jpg" alt=""></a></li>
+         
+        </ul>
+      </div>
+      <div id="item2" class="item">
+          <h2>2F 女装</h2>
+          <ul>
+            <li><a href=""><img src="./xing.jpg" alt=""></a></li>
+            <li><a href=""><img src="./xing.jpg" alt=""></a></li>
+            <li><a href=""><img src="./xing.jpg" alt=""></a></li>
+            <li><a href=""><img src="./xing.jpg" alt=""></a></li>
+            <li><a href=""><img src="./xing.jpg" alt=""></a></li>
+            <li><a href=""><img src="./xing.jpg" alt=""></a></li>
+            <li><a href=""><img src="./xing.jpg" alt=""></a></li>
+            <li><a href=""><img src="./xing.jpg" alt=""></a></li>
+            <li><a href=""><img src="./xing.jpg" alt=""></a></li>
+           
+          </ul>
+      </div>
+      <div id="item3" class="item">
+          <h2>3F 美妆</h2>
+          <ul>
+            <li><a href=""><img src="./xing.jpg" alt=""></a></li>
+            <li><a href=""><img src="./xing.jpg" alt=""></a></li>
+            <li><a href=""><img src="./xing.jpg" alt=""></a></li>
+            <li><a href=""><img src="./xing.jpg" alt=""></a></li>
+            <li><a href=""><img src="./xing.jpg" alt=""></a></li>
+            <li><a href=""><img src="./xing.jpg" alt=""></a></li>
+            <li><a href=""><img src="./xing.jpg" alt=""></a></li>
+            <li><a href=""><img src="./xing.jpg" alt=""></a></li>
+            <li><a href=""><img src="./xing.jpg" alt=""></a></li>
+           
+          </ul>
+      </div>
+      <div id="item4" class="item">
+            <h2>4F 数码</h2>
+            <ul>
+              <li><a href=""><img src="./xing.jpg" alt=""></a></li>
+              <li><a href=""><img src="./xing.jpg" alt=""></a></li>
+              <li><a href=""><img src="./xing.jpg" alt=""></a></li>
+              <li><a href=""><img src="./xing.jpg" alt=""></a></li>
+              <li><a href=""><img src="./xing.jpg" alt=""></a></li>
+              <li><a href=""><img src="./xing.jpg" alt=""></a></li>
+              <li><a href=""><img src="./xing.jpg" alt=""></a></li>
+              <li><a href=""><img src="./xing.jpg" alt=""></a></li>
+              <li><a href=""><img src="./xing.jpg" alt=""></a></li>
+             
+            </ul>
+          </div>
+          <div id="item5" class="item">
+              <h2>5F 美妆</h2>
+              <ul>
+                <li><a href=""><img src="./xing.jpg" alt=""></a></li>
+                <li><a href=""><img src="./xing.jpg" alt=""></a></li>
+                <li><a href=""><img src="./xing.jpg" alt=""></a></li>
+                <li><a href=""><img src="./xing.jpg" alt=""></a></li>
+                <li><a href=""><img src="./xing.jpg" alt=""></a></li>
+                <li><a href=""><img src="./xing.jpg" alt=""></a></li>
+                <li><a href=""><img src="./xing.jpg" alt=""></a></li>
+                <li><a href=""><img src="./xing.jpg" alt=""></a></li>
+                <li><a href=""><img src="./xing.jpg" alt=""></a></li>
+               
+              </ul>
+            </div>
+         
+      </div>
+    </div>
+
+    <script>
+      /**
+       * 右边点击 a的 hash实现 同id
+       * 左边滚动 右边跟着变 是左边判断当前id是哪个了 再右边根据currentId 增加或者移除类名实现的
+       * 
+      */
+      window.onload = handleOnload
+
+
+      function getByClassName(obj, cls){//只适用单个class 
+        var allEles = obj.getElementsByTagName('*')
+        var result = []
+        for(var i=0; i< allEles.length; i++){
+          if(allEles[i].className == cls){
+            result.push(allEles[i])
+          }
+        }
+        return result
+      }
+
+      function hasClass(obj, cls){
+        return obj.className.match(new RegExp("(\\s|^)" + cls + "(\\s|$)"))
+      }
+
+      function removeClass(obj, cls){
+        if(hasClass(obj, cls)){
+          //remove 
+          var reg = new RegExp("(\\s|^)" + cls + "(\\s|$)")
+          obj.className = obj.className.replace(reg, '')
+        }
+      }
+
+      function addClass(obj, cls){
+        if(!hasClass(obj,cls)){
+          obj.className += ' ' + cls
+        }
+      }
+      function handleOnload(){
+        window.onscroll = function(){
+          var top = document.documentElement ? document.documentElement.scrollTop : document.body. scrollTop
+          var menus = document.getElementById('menu').getElementsByTagName('a')
+          var items = getByClassName( document.getElementById('content') ,'item')
+          var currentId = ''
+
+          
+
+          for(var i=0; i<items.length; i++){
+            var _item = items [i]
+            var _itemTop = _item.offsetTop
+            //用户体验更好
+            if(top > _itemTop - 200 ){
+             currentId = _item.id
+            }else{
+              //直接跳出for循环
+              break
+            }
+          }
+
+          if(currentId){
+            //给a 加class 
+            for(var j=0; j< menus.length; j++){
+              var _menu = menus[j];
+              var _href = _menu.href.split('#');
+
+              if(_href[_href.length-1] != currentId){
+                removeClass(_menu, 'current')
+              }else{
+                addClass(_menu, 'current')
+              }
+            }
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
