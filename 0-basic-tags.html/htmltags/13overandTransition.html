@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      li {
+        list-style: none;
+      }
+      .list {
+        width: 1000px;
+        margin: 0 auto;
+        margin-top: 200px;
+      }
+      .item {
+        float: left;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        width: 33%;
+        background-color: yellow;
+        border: 1px solid red;
+      }
+
+      .item ul li {
+        overflow: hidden;
+        height: 0;
+        background-color: blue;
+        transition: height 0.5s;
+      }
+
+      .item:hover > ul > li {
+        height: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="list">
+      <li class="item">
+        html
+        <ul>
+          <li>html learn</li>
+          <li>html learn</li>
+          <li>html learn</li>
+        </ul>
+      </li>
+      <li class="item">
+        css
+        <ul>
+          <li>
+            css content
+          </li>
+          <li>
+            css content
+          </li>
+          <li>
+            css content
+          </li>
+        </ul>
+      </li>
+      <li class="item">
+        js
+        <ul>
+          <li>js 高级程序设计</li>
+          <li>js 高级程序设计</li>
+          <li>js 高级程序设计</li>
+        </ul>
+      </li>
+    </ul>
+  </body>
+</html>

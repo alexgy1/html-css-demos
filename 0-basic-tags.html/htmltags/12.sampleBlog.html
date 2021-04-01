@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+      }
+      .blog {
+        border: 1px solid skyblue;
+        max-width: 600px;
+        margin: 0 auto;
+        margin-top: 100px;
+      }
+      .clear:before,
+      .clear:after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+      .title {
+        padding: 5px;
+        font-size: 10px;
+        width: 100%;
+        box-sizing: border-box;
+        border-bottom: 1px solid slateblue;
+      }
+      .title a {
+        float: right;
+        color: orangered;
+      }
+
+      .list .list-item {
+        height: 100px;
+        box-sizing: border-box;
+        padding: 10px;
+        border: 1px solid red;
+      }
+      .list .list-item img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        float: left;
+        margin-right: 20px;
+      }
+      .list .list-item .des {
+        float: left;
+      }
+      .list .list-item .more {
+        float: right;
+        height: 80px;
+        line-height: 80px;
+        display: none;
+      }
+
+      .list .list-item:hover .more {
+        background-color: red;
+        display: block;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="blog">
+      <div class="title clear">
+        <h1>
+          标题
+          <a href="#">阅读更多</a>
+        </h1>
+      </div>
+      <div class="list">
+        <ul>
+          <li class="list-item clear">
+            <img src />
+            <div class="des  ">
+              <h2>des</h2>
+              <p>time</p>
+              <p>des 2021.03.31</p>
+            </div>
+            <div class="more">
+              more
+            </div>
+          </li>
+          <li class="list-item clear">
+            <img src />
+            <div class="des">
+              <h2>des2</h2>
+              <p>time</p>
+              <p>des 2021.03.31</p>
+            </div>
+            <div class="more">
+              more
+            </div>
+          </li>
+          <li class="list-item clear">
+            <img src />
+            <div class="des">
+              <h2>des3</h2>
+              <p>time</p>
+              <p>des 2021.03.31</p>
+            </div>
+            <div class="more">
+              more
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

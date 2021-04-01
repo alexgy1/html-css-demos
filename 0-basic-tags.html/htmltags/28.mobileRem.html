@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      a {
+        text-decoration: none;
+      }
+      .container {
+        /* 672px */
+        width: 6.72rem;
+        margin: 0 auto;
+        display: flex;
+        /* 不需要拉伸 */
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 0.2rem;
+      }
+      .container .pic {
+        /* 200px */
+        width: 2rem;
+        height: 1.5rem;
+        /* margin-right: 0.26rem; */
+      }
+      .container .text {
+        font-size: 0.2rem;
+        justify-content: flex-start;
+      }
+      .container .text p {
+        font-size: 0.24rem;
+      }
+      .container .btn {
+        width: 0.96rem;
+        background-color: skyblue;
+        border: none;
+        outline: none;
+        border-radius: 0.5rem;
+        color: white;
+        padding: 0.1rem 0.2rem;
+      }
+      .title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 0.2rem;
+        padding: 0 0.5rem;
+        margin-bottom: 0.3rem;
+        position: relative;
+      }
+      .title a {
+        font-size: 0.3rem;
+        color: black;
+      }
+
+      .title:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        width: 90%;
+        height: 1px;
+        background-color: red;
+        margin: 0;
+        left: 5%;
+      }
+
+      .banner {
+        width: 6.72rem;
+        height: 4rem;
+        overflow: hidden;
+        margin: 0.4rem auto;
+        border-radius: 0.2rem;
+      }
+      .banner img {
+        width: 100%;
+      }
+      .search {
+        width: 6.72rem;
+        margin: 0 auto;
+      }
+      .search input {
+        width: 100%;
+        border-radius: 0.5rem;
+        border: 1px solid skyblue;
+        height: 0.7rem;
+        padding: 0 0.5rem;
+        box-sizing: border-box;
+        outline: none;
+      }
+      .tabs {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        height: 0.8rem;
+        background-color: skyblue;
+        color: white;
+        text-align: center;
+        display: flex;
+        padding: 0.1rem;
+        /* align-items: center;
+        justify-content: center; */
+        box-sizing: border-box;
+        width: 100%;
+        font-size: 0.2rem;
+      }
+      .tabs .tab-item {
+        flex: 1;
+      }
+      /* .tabs .tab-item:nth-child(3){
+        flex: 2;
+      } */
+      .tabs .tab-item img {
+        width: 0.5rem;
+        height: 0.3rem;
+        background-color: red;
+      }
+
+      @keyframes sildeUp {
+        from {
+          transform: translateY(0);
+        }
+        to {
+          transform: translateY(100%);
+        }
+      }
+
+      @keyframes sildeDown {
+        from {
+          transform: translateY(-100%);
+        }
+        to {
+          transform: translateY(0);
+        }
+      }
+
+      .tip {
+        position: fixed;
+        width: 100%;
+        height: 30%;
+        background-color: rgba(0, 0, 0, 0.5);
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 0;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom-left-radius: 0.3rem;
+        border-bottom-right-radius: 0.3rem;
+        /* transform: translateY(0); */
+        animation: sildeDown 0.5s ease-in-out;
+      }
+      .popup {
+        position: fixed;
+        width: 100%;
+        height: 70%;
+        background-color: rgba(0, 0, 0, 0.5);
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 0;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-top-left-radius: 0.3rem;
+        border-top-right-radius: 0.3rem;
+        animation: sildeUp 0.5s ease-in;
+      }
+    </style>
+    <script src="rem.js"></script>
+  </head>
+  <body>
+    <div class="search"><input type="text" placeholder="search" /></div>
+    <div class="banner">
+      <img src="2.jpeg" alt="" />
+    </div>
+    <!-- 750宽度的设计稿  200px 要写成多少rem? 200/100  -->
+    <div class="title">
+      <h1 class="des">专题</h1>
+      <a href="#">more &gt;</a>
+    </div>
+    <div class="container">
+      <img class="pic" src="2.jpeg" alt="" />
+      <div class="text">
+        <h3>前端开发学习手册</h3>
+        <p>2021.03.31</p>
+      </div>
+      <button class="btn">进入</button>
+    </div>
+    <div class="container">
+      <img class="pic" src="2.jpeg" alt="" />
+      <div class="text">
+        <h3>前端开发学习手册</h3>
+        <p>2021.03.31</p>
+      </div>
+      <button class="btn">进入</button>
+    </div>
+
+    <div class="title">
+      <h1 class="des">html</h1>
+      <a href="#">more &gt;</a>
+    </div>
+    <div class="container">
+      <img class="pic" src="2.jpeg" alt="" />
+      <div class="text">
+        <h3>前端开发学习手册</h3>
+        <p>2021.03.31</p>
+      </div>
+      <button class="btn">进入</button>
+    </div>
+    <div class="container">
+      <img class="pic" src="2.jpeg" alt="" />
+      <div class="text">
+        <h3>前端开发学习手册</h3>
+        <p>2021.03.31</p>
+      </div>
+      <button class="btn">进入</button>
+    </div>
+
+    <div class="tabs">
+      <div class="tab-item">
+        <img src="" alt="" />
+        <p>首页</p>
+      </div>
+      <div class="tab-item">
+        <img src="" alt="" />
+        <p>手册</p>
+      </div>
+      <div class="tab-item">
+        <img src="" alt="" />
+        <p>课程</p>
+      </div>
+      <div class="tab-item">
+        <img src="" alt="" />
+        <p>社区</p>
+      </div>
+      <div class="tab-item">
+        <img src="" alt="" />
+        <p>我的</p>
+      </div>
+    </div>
+
+    <!-- popup -->
+    <!-- <div class="popup">
+      <h1>hello</h1>
+    </div> -->
+
+    <!-- tip -->
+    <div class="tip">
+      <h2>test</h2>
+    </div>
+  </body>
+</html>

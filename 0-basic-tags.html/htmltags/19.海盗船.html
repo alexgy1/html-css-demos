@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      @keyframes wave {
+        50% {
+          transform: translate(-50px);
+        }
+      }
+
+      @keyframes ship {
+        50% {
+          transform: rotate(15deg);
+        }
+      }
+      .sea {
+        position: fixed;
+        bottom: 0;
+      }
+
+      .wave1 {
+        position: absolute;
+        bottom: 60px;
+        height: 70px;
+        width: 2000px;
+        animation: wave 2s infinite;
+      }
+      .wave2 {
+        position: absolute;
+        bottom: 30px;
+        height: 70px;
+        width: 2000px;
+        animation: wave 6s infinite;
+      }
+      .wave3 {
+        position: absolute;
+        bottom: 0;
+        height: 70px;
+        width: 2000px;
+        animation: wave 4s infinite;
+      }
+      .ship {
+        position: fixed;
+        left: 30%;
+        bottom: 200px;
+        animation: ship 3s infinite;
+      }
+
+      @keyframes fishJump {
+        25% {
+          transform: translate(100px, -200px);
+        }
+
+        40% {
+          transform: translate(140px, 100px);
+        }
+
+        60% {
+          transform: translate(600px, -400px);
+        }
+
+        100% {
+          transform: translate(740px, 300px);
+        }
+      }
+
+      .fish {
+        position: fixed;
+        bottom: -50px;
+        left: 100px;
+        animation: fishJump 3s infinite;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img src="2.jpeg" alt="" class="fish" />
+      <img src="2.jpeg" alt="" class="ship" />
+      <div class="sea">
+        <img src="2.jpeg" class="wave1" alt="" />
+        <img src="2.jpeg" class="wave2" alt="" />
+        <img src="2.jpeg" class="wave3" alt="" />
+      </div>
+    </div>
+  </body>
+</html>

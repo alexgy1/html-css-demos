@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        display: grid;
+        width: 800px;
+        height: 500px;
+        border: 1px solid blue;
+        grid-template-columns: 100px 100px 100px;
+        grid-template-rows: 100px 100px 100px;
+
+        /* 整个在容器中对齐的方式  */
+        justify-content: center;
+        align-content: center;
+
+        /*  */
+        /* grid-auto-flow: column; */
+        /* 溢出的尺寸 */
+        grid-auto-rows: 50px;
+        grid-auto-columns: 50px;
+      }
+      /* .container {
+        display: grid;
+        margin: 0 auto;
+        width: 1400px;
+        height: 500px;
+        border: 1px solid blue;
+        grid-template-columns: 50px 1fr 4fr;
+        grid-template-rows: 100px 100px 300px;
+        /* 默认 延伸 stretch 水平对齐方式 */
+      /* justify-items: stretch; */
+      /* align-items: stretch;
+      } */
+      .item {
+        text-align: center;
+        border: 1px solid red;
+      }
+      .first {
+        /* grid-column-start: 1;
+        grid-column-end: 3; */
+        grid-column: 2/4;
+        grid-row: 2/4;
+
+        justify-self: center;
+        align-self: center;
+        /* justify-self: start;
+        align-self: start; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item first">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+      <div class="item">7</div>
+      <div class="item">8</div>
+      <div class="item">9</div>
+    </div>
+
+    <!-- <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+        <div class="item">10</div>
+        <div class="item">11</div>
+      </div> -->
+  </body>
+</html>

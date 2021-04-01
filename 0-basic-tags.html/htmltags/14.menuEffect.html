@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .list {
+        margin-top: 100px;
+      }
+      li {
+        list-style: none;
+        width: 80px;
+        height: 30px;
+        float: left;
+
+        overflow: hidden;
+      }
+      li:hover .show {
+        margin-top: -30px;
+      }
+      .show {
+        width: 80px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        background-color: red;
+        transition: margin 0.5s;
+      }
+      .click {
+        width: 80px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        background-color: green;
+        transition: margin 0.5s;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="list">
+      <li>
+        <p class="show">html</p>
+        <p class="click">html</p>
+      </li>
+      <li>
+        <p class="show">css</p>
+        <p class="click">css</p>
+      </li>
+      <li>
+        <p class="show">js</p>
+        <p class="click">js</p>
+      </li>
+    </ul>
+  </body>
+</html>

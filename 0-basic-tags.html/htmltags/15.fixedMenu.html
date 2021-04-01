@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #menu {
+        position: fixed;
+        bottom: 200px;
+        right: 90px;
+      }
+      li {
+        width: 40px;
+        height: 40px;
+        background-color: red;
+        text-align: center;
+        list-style: none;
+        line-height: 40px;
+        color: white;
+        position: relative;
+        overflow: hidden;
+      }
+      .show {
+        height: 40px;
+        width: 40px;
+      }
+      li:hover .click {
+        transform: rotate(0);
+      }
+      .click {
+        color: black;
+        height: 40px;
+        width: 40px;
+        background-color: yellow;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: rotate(45deg);
+        transform-origin: -40px 40px;
+        /* 给 transform 设置 transition */
+        transition: transform 0.5s;
+      }
+      /* 挡住要定位 */
+    </style>
+  </head>
+  <body>
+    <div id="menu">
+      <li>
+        <p class="show">html</p>
+        <p class="click">html</p>
+      </li>
+      <li>
+        <p class="show">js</p>
+        <p class="click">js</p>
+      </li>
+      <li>
+        <p class="show">css</p>
+        <p class="click">css</p>
+      </li>
+    </div>
+  </body>
+</html>

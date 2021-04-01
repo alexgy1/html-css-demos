@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      .box {
+        width: 600px;
+        height: 200px;
+        background-color: yellow;
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+      }
+      .item {
+        /* 不设置宽度的情况 设置这个值 会默认宽度撑满 */
+        /* flex-grow: 1; */
+        /* width: 300px; */
+        /* flex-shrink: 0.5; */
+        background-color: red;
+        border: 1px solid black;
+        flex: 1 1 auto;
+      }
+      /* 常用 */
+      /* .big {
+        flex-grow: 3;
+      } */
+      /* .big {
+        width: 300px;
+        flex-shrink: 0.75;
+      } */
+
+      /* 设置一个宽度 */
+      /* .big {
+        flex-basis: 600px;
+      } */
+
+      .big {
+        height: 100px;
+        align-self: center;
+      }
+
+      .box2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 200px;
+        width: 200px;
+        background-color: #fff;
+        border: 1px solid red;
+      }
+      .inner {
+        width: 60px;
+        height: 60px;
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item big">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+    </div>
+
+    <div class="box2">
+      <div class="inner">123123</div>
+    </div>
+
+    <div class="tab">
+      <div class="tab-item"></div>
+      <div class="tab-item"></div>
+      <div class="tab-item"></div>
+      <div class="tab-item"></div>
+      {$}
+    </div>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      @keyframes anim {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes anim2 {
+        0% {
+          transform: rotate(0deg);
+        }
+        50% {
+          transform: rotate(360deg);
+        }
+      }
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        margin: 100px auto;
+        /* animation-name  animation-duration  animation-time-funcion animation-delay animation-iteration-count */
+        animation: anim 2s 1s linear 2;
+      }
+
+      .box2 {
+        animation: anim2 5s linear 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+
+    <div class="box box2"></div>
+  </body>
+</html>

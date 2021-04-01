@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        display: flex;
+        width: 800px;
+        margin: 0 auto;
+        background-color: yellow;
+        justify-content: center;
+        align-items: center;
+      }
+      .item {
+        text-align: center;
+        width: 200px;
+        border: 1px solid red;
+      }
+      @media screen and (max-width: 700px) {
+        .container {
+          width: 100%;
+          flex-direction: column;
+        }
+        .item {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item">
+        <h1>文档</h1>
+      </div>
+      <div class="item">
+        <h1>博客</h1>
+      </div>
+      <div class="item">
+        <h1>视频</h1>
+      </div>
+    </div>
+  </body>
+</html>

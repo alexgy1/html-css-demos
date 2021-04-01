@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      /* 要给父容器分高度才可以 */
+      html,
+      body {
+        height: 100%;
+      }
+      .box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: yellow;
+        height: 100%;
+        width: 100%;
+      }
+      .inner {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+      }
+      .menu {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        background-color: skyblue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .item {
+        flex: 1;
+        /* display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; */
+        text-align: center;
+      }
+      .item img {
+        width: 30px;
+        height: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="inner">12</div>
+    </div>
+    <div class=" menu">
+      <div class="item">
+        <img src="" alt="" />
+        <p>首页</p>
+      </div>
+      <div class="item">
+        <img src="" alt="" />
+        <p>推荐</p>
+      </div>
+      <div class="item">
+        <img src="" alt="" />
+        <p>朋友圈</p>
+      </div>
+      <div class="item">
+        <img src="" alt="" />
+        <p>我的</p>
+      </div>
+    </div>
+  </body>
+</html>
