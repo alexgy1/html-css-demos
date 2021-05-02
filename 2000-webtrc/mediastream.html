@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .none {
+        -webkit-filter: none;
+        filter: none;
+      }
+      .blur {
+        -webkit-filter: blur(3px);
+        filter: blur(3px);
+      }
+      .grayscale {
+        -webkit-filter: grayscale(1);
+        filter: grayscale(1);
+      }
+      .invert {
+        -webkit-filter: invert(1);
+      }
+      .sepia {
+        -webkit-filter: sepia(1);
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <label for=""> audio input device: </label>
+      <select name="" id="audioSource"></select>
+    </div>
+    <div>
+      <label for=""> audio output device: </label>
+      <select name="" id="audioOutput"></select>
+    </div>
+    <div>
+      <label for=""> video input device : </label
+      ><select name="" id="videoSource"></select>
+    </div>
+
+    <!-- filter -->
+    <div>
+      <label>Filter:</label>
+      <select id="filter">
+        <option value="none">None</option>
+        <option value="graystyle">灰度</option>
+        <option value="sepia">褐色</option>
+        <option value="saturate">饱和度</option>
+        <option value="hue-rotate ">色相旋转</option>
+        <option value="ivert">反色</option>
+        <!-- 
+        <option value="opacity">透明度</option>
+        <option value="brightness">亮度</option>
+        <option value="contrast">对比度</option>
+        <option value="blur">模糊</option>
+        <option value="drop-shadow">阴影</option> -->
+      </select>
+    </div>
+
+    <!-- 视频中获取图片 -->
+    <div>
+      <button id="snapshot">Take snapshout</button>
+    </div>
+    <div>
+      <canvas id="picture"></canvas>
+    </div>
+
+    <div>
+      <!-- audio -->
+      <audio autoplay controls id="audioPlayer"></audio>
+      <!-- video -->
+      <table>
+        <tr>
+          <td><video autoplay playsinline id="player"></video></td>
+          <td><video autoplay playsinline id="recplayer"></video></td>
+          <td><div id="divdom"></div></td>
+        </tr>
+        <tr>
+          <td><button id="record">start record</button></td>
+          <td><button id="recplay" disabled>Play</button></td>
+          <td><button id="download" disabled>download</button></td>
+        </tr>
+      </table>
+    </div>
+    <script>
+      "use strict";
+      //devices
+      var audioSource = document.querySelector("#audioSource");
+      var audioOutput = document.querySelector("#audioOutput");
+      var videoSource = document.querySelector("#videoSource");
+      //filter
+      var filterSelect = document.querySelector("#filter");
+
+      //picture
+      var snapshot = document.querySelector("#snapshot");
+      var canvas = document.querySelector("canvas#picture");
+      canvas.width = 320;
+      canvas.height = 320;
+      //video play
+      var videoPlay = document.querySelector("#player");
+      var audioPlay = document.querySelector("#audioPlayer");
+
+      //div
+      var divDOm = document.querySelector("#divdom");
+
+      //record
+      var recvideo = document.querySelector("#recplayer");
+      var recordBtn = document.querySelector("#record");
+      var recplayBtn = document.querySelector("#recplay");
+      var downloadBtn = document.querySelector("#download");
+
+      //mediaRecorder
+      var mediaRecorder;
+
+      function start(isNolyShowAudio = false) {
+        if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+          console.log("getUserMedia is not supported");
+          return;
+        } else {
+          var deviceId = videoSource.value;
+          if (!isNolyShowAudio) {
+            var constrants = {
+              //   video: true,
+              //具体的参数
+              video: {
+                width: 320,
+                height: 240,
+                frameRate: 30,
+                facingMode: "environment", //前置摄像头 还是后置
+              },
+              audio: false,
+              //音频约束
+              // audio: {
+              //   nosieSuppression: true, //降噪
+              //   echoCancellation: true, //消除回音
+              // },
+              // deviceId: deviceId ? deviceId : undefined,
+            };
+          } else {
+            var constrants = {
+              //   video: false,
+              //音频约束
+              audio: {
+                nosieSuppression: true, //降噪
+                echoCancellation: true, //消除回音
+              },
+              deviceId: deviceId ? { exact: deviceId } : undefined,
+            };
+          }
+
+          navigator.mediaDevices
+            .getUserMedia(constrants)
+            // .then(getMediaStream) //视频
+            .then(getMediaStreamAudio) //音频
+            .then(getDevices)
+            .catch(handlerError);
+        }
+      }
+
+      start();
+
+      videoSource.onchange = start;
+
+      filterSelect.onchange = function () {
+        videoPlay.className = filterSelect.value;
+      };
+
+      snapshot.onclick = function () {
+        //滤镜
+        canvas.className = filterSelect.value;
+        //截图
+        canvas
+          .getContext("2d")
+          .drawImage(videoPlay, 0, 0, canvas.width, canvas.height);
+      };
+
+      function handleDataAvailable(e) {
+        if (e && e.data && e.data.size > 0) {
+          buffer.push(e.data);
+        }
+      }
+
+      var buffer;
+      function startRecord() {
+        buffer = [];
+        var options = {
+          mimeType: "video/webm;codecs=vp8",
+        };
+        if (!MediaRecorder.isTypeSupported(options.mimeType)) {
+          console.error(`${options.mimeType}is not supported`);
+          return;
+        }
+        try {
+          mediaRecorder = new MediaRecorder(window.stream, options);
+        } catch (error) {
+          console.error("failed to create mediarecorder");
+          return;
+        }
+        mediaRecorder.ondataavailable = handleDataAvailable;
+        mediaRecorder.start(10);
+      }
+
+      function soptRecord() {}
+
+      recordBtn.onclick = function () {
+        if (recordBtn.textContent === "start record") {
+          startRecord();
+          recordBtn.textContent = "Stop Record";
+          recplayBtn.disabled = true;
+        } else {
+          soptRecord();
+          recordBtn.textContent = "start record";
+          recplayBtn.disabled = true;
+          downloadBtn.disabled = true;
+        }
+      };
+
+      recplayBtn.onclick = function () {
+        var blob = new Blob(buffer, { type: "video/webm" });
+        recvideo.src = window.URL.createObjectURL(blob);
+        recvideo.srcObject = null;
+        recvideo.controls = true;
+        recvideo.play();
+      };
+
+      downloadBtn.onclick = function () {
+        var blob = new Blob(buffer, { type: "video/webm" });
+        var url = window.URL.createObjectURL(blob);
+        var a = document.createElement("a");
+
+        a.herf = url;
+        a.style.display = "none";
+        //name download
+        a.download = "aaa.webm";
+        a.click();
+      };
+
+      function getMediaStream(stream) {
+        videoPlay.srcObject = stream;
+
+        //give to window
+        window.stream = stream;
+        //video track
+        var videoTrack = stream.getVideoTracks()[0];
+        var videoConstraints = videoTrack.getSetting(); //obj
+        divDOm.textContent = JSON.stringify(videoConstraints, null, 2);
+        return navigator.mediaDevices.enumerateDevices();
+      }
+
+      function getMediaStreamAudio(stream) {
+        audioPlay.srcObject = stream;
+        return navigator.mediaDevices.enumerateDevices();
+      }
+
+      function getDevices(devicesInfos) {
+        devicesInfos.forEach(function (deviceInfo) {
+          var options = document.createElement("option");
+          options.text = deviceInfo.label;
+          options.value = deviceInfo.deviceId;
+          var kind = deviceInfo.kind;
+          if (kind === "audioinput") {
+            audioSource.appendChild(options);
+          } else if (kind === "audiooutput") {
+            audioOutput.appendChild(options);
+          } else if (kind === "videoinput") {
+            videoSource.appendChild(options);
+          }
+        });
+      }
+      function handlerError(err) {
+        console.log("getUserMedia error:", err);
+      }
+
+      function getDeskTop() {
+        var constrants = {
+          video: true,
+          audio: false,
+        };
+        navigator.mediaDevices
+          .getDisplayMedia(constrants)
+          // .then(getMediaStream) //视频
+          .then(getMediaStreamAudio) //音频
+          .then(getDevices)
+          .catch(handlerError);
+      }
+
+      //适配 getUserMedia
+      //   var getUserMedia =
+      //     navigator.getUserMedia ||
+      //     navigator.webkitGetUserMedia ||
+      //     navigator.mozGetUserMedia;
+
+      //所以 就使用google 开源库 adapter.js
+      //   https://webrtchacks.github.io/adapter/adapter-latest.js
+    </script>
+
+    <!-- <script src="https://webrtchacks.github.io/adapter/adapter-latest.js"></script> -->
+  </body>
+</html>
