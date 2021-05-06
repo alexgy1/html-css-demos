@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas id="canvas" width="120" height="40"></canvas>
+    <script>
+      let canvas = document.getElementById("canvas");
+      let ctx = canvas.getContext("2d");
+
+      function getColor() {
+        //Math.ceil()
+        let r = Math.ceil(Math.random() * 255);
+        let g = Math.ceil(Math.random() * 255);
+        let b = Math.ceil(Math.random() * 255);
+        return `rgb(${r},${g},${b})`;
+      }
+
+      canvas.addEventListener("click", function () {
+        //clear canvas
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        drawRect();
+      });
+
+      function drawRect() {
+        ctx.strokeStyle = "blue";
+        ctx.strokeRect(0, 0, canvas.width, canvas.height);
+
+        //随机画八条线 在矩形内
+        for (let i = 0; i < 8; i++) {
+          ctx.beginPath();
+          //横坐标 0 -矩形宽度
+          //纵坐标 0-矩形高度
+          //start point
+          ctx.moveTo(
+            Math.random() * canvas.width,
+            Math.random() * canvas.height
+          );
+
+          //end  point
+          ctx.lineTo(
+            Math.random() * canvas.width,
+            Math.random() * canvas.height
+          );
+
+          ctx.strokeStyle = getColor();
+          ctx.stroke();
+        }
+
+        //画20个点
+        for (let i = 0; i < 20; i++) {
+          //必须要beginPath
+          ctx.beginPath();
+          let x = Math.random() * canvas.width,
+            y = Math.random() * canvas.height;
+
+          ctx.arc(x, y, 1, 0, 360 * (Math.PI / 180));
+          ctx.fillStyle = getColor();
+          ctx.fill();
+        }
+
+        //随机生成四位数字 10 0-9
+        let numbs = new Array(10).fill().map((i, v) => v);
+        console.log(numbs);
+        for (let i = 0; i < 4; i++) {
+          ctx.save(); //保证在一条直线上 相对左上角
+          let x = 20 + i * 20, //水平方向间隔20
+            y = 20 + 20 * Math.random(); // 20 -40 px
+          ctx.translate(x, y);
+          //向下取整
+          let numbIndex = Math.floor(Math.random() * numbs.length);
+          let txt = numbs[numbIndex];
+          ctx.font = "25px  微软雅黑";
+          ctx.fillStyle = getColor();
+          //0  0 相对 ctx.translate(x, y);
+          ctx.fillText(txt, 0, 0);
+          ctx.restore();
+        }
+      }
+      drawRect();
+      let c = getColor();
+      console.log(c);
+    </script>
+  </body>
+</html>

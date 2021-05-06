@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas id="canvas"></canvas>
+    <script>
+      let canvas = document.getElementById("canvas");
+      let ctx = canvas.getContext("2d");
+      let ballArr = [];
+      canvas.width = document.documentElement.clientWidth;
+      canvas.height = document.documentElement.clientHeight;
+
+      function Ball(color) {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.r = 10;
+        this.color = color;
+
+        //dir speed
+        this.dx = parseInt(Math.random() * 10) - 5;
+        this.dy = parseInt(Math.random() * 10) - 5;
+
+        ballArr.push(this);
+      }
+
+      Ball.prototype.render = function () {
+        ctx.beginPath();
+        ctx.fillStyle = this.color;
+        ctx.arc(this.x, this.y, this.r, 0, 360 * (Math.PI / 180), false);
+        ctx.fill();
+      };
+
+      Ball.prototype.update = function () {
+        this.x += this.dx;
+        this.y += this.dy;
+        if (this.x < 0 || this.x > canvas.width) {
+          this.dx = -this.dx;
+        }
+        if (this.y < 0 || this.y > canvas.height) {
+          this.dy = -this.dy;
+        }
+      };
+
+      for (let i = 0; i < 20; i++) {
+        let p = new Ball("red");
+        p.render();
+      }
+
+      //定时器 清除屏幕 更新变量 重新绘制
+
+      //   setInterval(() => {
+      //     ctx.clearRect(0, 0, canvas.width, canvas.height);
+      //     ballArr.forEach((ball) => {
+      //       ball.update();
+      //       ball.render();
+      //     });
+      //   }, 50);
+
+      //   setTimeout(function run() {
+      //     ctx.clearRect(0, 0, canvas.width, canvas.height);
+      //     ballArr.forEach((ball) => {
+      //       ball.update();
+      //       ball.render();
+      //     });
+
+      //     setTimeout(run, 50);
+      //   }, 50);
+
+      //   requestAnimationFrame; //按帧对网页进行重绘
+
+      //   优点
+      //     每一帧中所有操作dom集中起来 在一次重绘中完成 并且重绘或者回流的时间间隔紧跟浏览器刷新频率
+      //     全局函数 接受一个回调函数  浏览器重绘的时候 会调用这个函数  反复调用 requestAnimationFrame
+      //     节省cpu gpu 电力 setTimeout 页面隐藏或者被最小化的时候 仍然在后台执行
+      //     requestAnimationFrame 退出的时候会暂停 回来的时候会继续
+      //   缺点
+      //     在主线程做 主线程繁忙 动画会大打折扣
+
+      requestAnimationFrame(function run() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ballArr.forEach((ball) => {
+          ball.update();
+          ball.render();
+        });
+
+        requestAnimationFrame(run, 50);
+      });
+    </script>
+  </body>
+</html>

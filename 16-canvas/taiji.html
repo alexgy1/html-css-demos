@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas
+      id="canvas"
+      width="600"
+      height="400"
+      style="background-color: #eed2ee"
+    ></canvas>
+    <script>
+      let canvas = document.getElementById("canvas");
+      let ctx = canvas.getContext("2d");
+
+      let radius = 150;
+      ctx.translate(canvas.width / 2, canvas.height / 2);
+
+      //right half circle
+      ctx.beginPath();
+      ctx.fillStyle = "#fff";
+      ctx.arc(0, 0, radius, -90 * (Math.PI / 180), 90 * (Math.PI / 180), false); //顺时针
+      ctx.fill();
+
+      //left half circle
+      ctx.beginPath();
+      ctx.fillStyle = "#000";
+      ctx.arc(0, 0, radius, -90 * (Math.PI / 180), 90 * (Math.PI / 180), true); //逆时针
+      ctx.fill();
+
+      //top white circle
+      ctx.beginPath();
+      ctx.fillStyle = "#fff";
+      ctx.arc(0, -radius / 2, radius / 2, 0, 360 * (Math.PI / 180), true); //逆时针
+      ctx.fill();
+
+      //bottom black circle
+      ctx.beginPath();
+      ctx.fillStyle = "#000";
+      ctx.arc(0, radius / 2, radius / 2, 0, 360 * (Math.PI / 180), true); //逆时针
+      ctx.fill();
+
+      //little white circle
+      ctx.beginPath();
+      ctx.fillStyle = "#fff";
+      ctx.arc(0, radius / 2, 10, 0, 360 * (Math.PI / 180), true); //逆时针
+      ctx.fill();
+
+      //top little blaco circle
+      ctx.beginPath();
+      ctx.fillStyle = "#000";
+      ctx.arc(0, -radius / 2, 10, 0, 360 * (Math.PI / 180), true); //逆时针
+      ctx.fill();
+    </script>
+  </body>
+</html>
