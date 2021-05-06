@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .clock {
+        width: 500px;
+        height: 500px;
+        background-color: #202121;
+        border-radius: 100px;
+        margin: 50px auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="clock">
+      <canvas id="box" width="500" height="500"></canvas>
+    </div>
+    <script>
+      (function () {
+        let clock = document.getElementById("box");
+        let ctx = clock.getContext("2d"),
+          cW = ctx.canvas.width,
+          cH = ctx.canvas.height,
+          timer = null;
+        console.log(ctx);
+        class Clock {
+          constructor() {
+            this.r = cW / 2;
+          }
+          init() {
+            setInterval(this.draw.bind(this), 1000);
+          }
+
+          draw() {
+            ctx.clearRect(0, 0, cW, cH);
+            let { h, m, s } = this._getTIme();
+
+            ctx.save();
+            this.drawPanel();
+            this.drawHours();
+            this.Hour(h, m);
+            this.Minute(m);
+            this.Second(s);
+            this.drawCenterPoints();
+            ctx.restore();
+          }
+
+          drawPanel() {
+            ctx.beginPath();
+            ctx.translate(this.r, this.r);
+            ctx.fillStyle = "#fff";
+            ctx.arc(0, 0, this.r - 20, 100, 0, 2 * Math.PI);
+
+            // ctx.arc(this.r, this.r, this.r - 20, 100, 0, 2 * Math.PI);
+            // ctx.stroke();
+            ctx.fill();
+          }
+
+          drawHours() {
+            let radius, x, y;
+            ctx.font = "40px  sans-serif";
+            ctx.fillStyle = "#000";
+
+            //center
+            ctx.textAlign = "center";
+            ctx.textBaseLine = "middle";
+
+            let hours = new Array(12).fill(1).map((i, v) => v + 1);
+            hours.push(hours.shift(), hours.shift());
+            hours.forEach((h, index) => {
+              radius = ((2 * Math.PI) / 12) * index; //每个hour对应的弧度
+              x = (this.r - 60) * Math.cos(radius);
+              y = (this.r - 60) * Math.sin(radius);
+
+              //   ctx.fillText(h, this.r, this.r);
+              ctx.beginPath();
+              ctx.fillText(h, x, y);
+            });
+          }
+
+          drawCenterPoints() {
+            //先画大圆 再画小圆 在上面
+            ctx.beginPath();
+            ctx.fillStyle = "#333";
+            ctx.arc(0, 0, 13, 0, 2 * Math.PI, false);
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.fillStyle = "#666";
+            ctx.arc(0, 0, 6, 0, 2 * Math.PI, false);
+            ctx.fill();
+          }
+
+          Hour(h, m) {
+            let radius = ((Math.PI * 2) / 12) * h;
+            let mRadius = ((Math.PI * 2) / 12 / 60) * m;
+            ctx.save();
+            ctx.rotate(radius + mRadius);
+            ctx.beginPath();
+            ctx.lineWidth = 5;
+            ctx.lineCap = "round";
+            ctx.moveTo(0, 0); //中点 start
+            ctx.lineTo(0, -this.r / 1.8); // end  top is -
+            ctx.stroke();
+            ctx.restore();
+          }
+          Minute(m) {
+            ctx.save();
+            ctx.beginPath();
+            let radius = ((Math.PI * 2) / 60) * m;
+            //先旋转再画
+            ctx.rotate(radius);
+
+            ctx.lineWidth = 5;
+            ctx.lineCap = "round";
+            ctx.strokeStyle = "#f40";
+            ctx.moveTo(0, 0); //中点 start
+            ctx.lineTo(0, -this.r / 1.5); // end  top is -
+            ctx.stroke();
+            ctx.restore();
+          }
+          Second(s) {
+            ctx.beginPath();
+            let radius = ((Math.PI * 2) / 60) * s;
+            ctx.rotate(radius);
+            ctx.strokeStyle = "orange";
+            ctx.lineWidth = 5;
+            ctx.lineCap = "round";
+            ctx.moveTo(0, 0); //中点 start
+            ctx.lineTo(0, -this.r / 1.2); // end  top is -
+
+            ctx.stroke();
+          }
+
+          _getTIme() {
+            let d = new Date();
+            return {
+              h: d.getHours(),
+              m: d.getMinutes(),
+              s: d.getSeconds(),
+            };
+          }
+        }
+
+        let c = new Clock();
+        c.init();
+      })();
+    </script>
+  </body>
+</html>
