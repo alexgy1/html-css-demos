@@ -1,0 +1,96 @@
+/* rest */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.4;
+}
+a {
+  text-decoration: none;
+}
+p {
+  margin: 0.75rem 0;
+}
+
+/* utility classes */
+.text-primary {
+  color: orange;
+}
+.l-heading {
+  font-size: 4rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.1;
+}
+
+.lead {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+.btn {
+  display: inline-block;
+  padding: 0.5rem 2rem;
+  color: #fff;
+  background-color: orange;
+  border: none;
+  border-radius: 5px;
+}
+.btn:hover {
+  background-color: orangered;
+}
+/* navbar */
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  background: #333;
+  color: #fff;
+  /*  结合固定定位和相对定位 当触发特定阈值的时候就会触发 */
+  position: stick;
+  /* 阈值 android 对这个属性的兼容不是很好 */
+  top: 0;
+  z-index: 1;
+  padding: 1rem;
+}
+
+#navbar ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+#navbar ul li a {
+  color: white;
+  padding: 0.75rem;
+  margin: 0 0.25rem;
+}
+
+#navbar ul li a:hover {
+  background: orange;
+  border-radius: 5px;
+}
+
+/* header */
+#home {
+  background: url("../../01-demo-website/img/bg5.jpeg") no-repeat center
+    center/cover;
+  height: 100vh;
+  color: #fff;
+  position: relative;
+}
+
+#home .home-content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 2rem;
+  height: 100%;
+  /* 父相子绝对 */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}

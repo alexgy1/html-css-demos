@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .stack-container {
+        width: 960px;
+        overflow: hidden;
+      }
+      .stack {
+        width: 320px;
+        padding: 12px 16px;
+        box-sizing: border-box;
+        float: left;
+      }
+      a {
+        text-decoration: none;
+      }
+
+      .stack .content {
+      }
+      .stack .content .top {
+        height: 158px;
+        position: relative;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        overflow: hidden;
+      }
+      .stack .content .top img {
+        width: 100%;
+        height: 100%;
+      }
+      .stack .content .top .part {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        background-image: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0) 21%,
+          rgba(0, 0, 0, 0.4)
+        );
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+      }
+      .stack .content .top .part .title {
+        padding: 4px 13px;
+        text-shadow: 0 0 9px rgba(0, 0, 0, 0.78);
+        font-family: Roboto;
+        font-size: 12px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.67;
+        letter-spacing: normal;
+        color: #ffffff;
+      }
+      .stack .content .top .part .title .icon {
+        width: 24px;
+        height: 24px;
+        margin-right: 8px;
+      }
+
+      .stack .content .top .part .des {
+        padding: 0 13px 6px;
+        line-height: 24px;
+        margin: 4px 0 0;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        font-family: Roboto;
+        font-size: 24px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1;
+        letter-spacing: normal;
+        color: #ffffff;
+      }
+      .stack .content .bottom {
+        height: 66px;
+        line-height: 66px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #000;
+        color: #fff;
+        padding: 10px;
+        box-sizing: border-box;
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+      }
+      .stack .content .bottom .l {
+        flex: 1;
+        margin-right: 40px;
+      }
+
+      .stack .content .bottom .l p {
+        font-family: Roboto;
+        font-size: 14px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.43;
+        letter-spacing: 0.25px;
+        color: #ffffff;
+      }
+      .stack .content .bottom .r {
+        width: 79px;
+        height: 36px;
+        background-color: #f16e00;
+        text-align: center;
+        line-height: 36px;
+        color: #fff;
+        font-size: 14px;
+      }
+      .stack .dots-wrapper {
+        text-align: center;
+      }
+      .stack .dots-wrapper .dots {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 8px;
+        margin-bottom: 12px;
+      }
+      .stack .dots-wrapper .dots .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: #ccc;
+        margin-right: 4px;
+      }
+      .stack .dots-wrapper .dots .dot.on {
+        background-color: #f16e00;
+      }
+      .banner {
+        width: 100%;
+        height: 300px;
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="stack-container">
+      <div class="stack">
+        <div class="content">
+          <a href="javascript:;">
+            <div class="top">
+              <img
+                src="https://img10.360buyimg.com/pop/s1180x940_jfs/t1/165309/23/16165/82455/6066b8f3E63dcbc13/3085bf11d7bb477a.jpg.webp"
+                alt=""
+              />
+              <div class="part">
+                <div class="title">
+                  <img src="./logo.svg" alt="" class="icon" />
+                  title
+                </div>
+                <div class="des">des</div>
+              </div>
+            </div>
+            <div class="bottom">
+              <div class="l">
+                <p>
+                  this is l this is l this is lthis is lis is l this is l thiis
+                  is l this is l thi
+                </p>
+              </div>
+              <div class="r">Get</div>
+            </div>
+          </a>
+        </div>
+        <div class="dots-wrapper">
+          <div class="dots">
+            <div class="dot on"></div>
+            <div class="dot"></div>
+          </div>
+        </div>
+      </div>
+      <div class="stack">
+        <div class="content">
+          <a href="">
+            <div class="top">
+              <img
+                src="https://img10.360buyimg.com/pop/s1180x940_jfs/t1/165309/23/16165/82455/6066b8f3E63dcbc13/3085bf11d7bb477a.jpg.webp"
+                alt=""
+              />
+              <div class="part">
+                <div class="title">title</div>
+                <div class="des">des</div>
+              </div>
+            </div>
+            <div class="bottom">
+              <div class="l">this is l</div>
+              <div class="r">Get</div>
+            </div>
+          </a>
+        </div>
+        <div class="dots-wrapper">
+          <div class="dots">
+            <div class="dot on"></div>
+            <div class="dot"></div>
+          </div>
+        </div>
+      </div>
+      <div class="stack">
+        <div class="content">
+          <a href="">
+            <div class="top">
+              <img
+                src="https://img10.360buyimg.com/pop/s1180x940_jfs/t1/165309/23/16165/82455/6066b8f3E63dcbc13/3085bf11d7bb477a.jpg.webp"
+                alt=""
+              />
+              <div class="part">
+                <div class="title">title</div>
+                <div class="des">des</div>
+              </div>
+            </div>
+            <div class="bottom">
+              <div class="l">this is l</div>
+              <div class="r">Get</div>
+            </div>
+          </a>
+        </div>
+        <div class="dots-wrapper">
+          <div class="dots">
+            <div class="dot on"></div>
+            <div class="dot"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="banner"></div>
+  </body>
+</html>

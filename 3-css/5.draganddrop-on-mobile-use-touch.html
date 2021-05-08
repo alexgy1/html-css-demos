@@ -1,0 +1,32 @@
+<style>
+  #box {
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    background-color: #ccc;
+  }
+</style>
+<div id="container">
+  <div id="box"></div>
+</div>
+<script>
+  window.onload = function () {
+    var box = document.getElementById("box");
+
+    box.addEventListener("touchmove", function (e) {
+      var x = e.touches[0].pageX,
+        y = e.touches[0].pageY;
+      console.log(e, x, y);
+
+      box.style.left = x + "px";
+      box.style.top = y + "px";
+    });
+
+    //dropping  the element
+    box.addEventListener("touchend", function (e) {
+      var x = parseInt(box.style.x),
+        y = parseInt(box.style.y);
+      console.log("x", x, "y :", y);
+    });
+  };
+</script>

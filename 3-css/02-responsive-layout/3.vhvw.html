@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vh vw</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      header {
+        background: #333;
+        color: #fff;
+        /* height 占满 给 height 100% 为什么不可以 */
+        /* height: 100%; */
+        height: 100vh;
+        /* width: 50vw; */
+        padding: 2rem;
+        padding-top: 15rem;
+        text-align: center;
+        margin: 0 auto;
+
+        background: #333
+          url("https://images.unsplash.com/photo-1600850055796-3e344841992a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8NzN8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60")
+          no-repeat center center/cover;
+      }
+      header h1 {
+        font-size: 3rem;
+      }
+      header p {
+        margin: 1rem 0;
+      }
+      .btn {
+        display: inline-block;
+        text-decoration: none;
+        background: #f4f4f4;
+        color: #333;
+        padding: 0.7rem 0.2rem;
+      }
+
+      section {
+        padding: 2rem;
+      }
+
+      @media (max-height: 400px) {
+        header {
+          padding-top: 5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>welcome alex site</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia sint
+        facilis accusamus assumenda nostrum, reiciendis eveniet nobis iste
+        facere pariatur odit quod recusandae dolores cum voluptas non vero
+        molestias suscipit?
+      </p>
+      <a href="#" class="btn">about us</a>
+    </header>
+
+    <section>
+      <h3>关于我们</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto
+        neque voluptatem odit? Officiis aperiam velit, numquam maiores provident
+        quisquam reprehenderit pariatur doloremque distinctio, odio, facere hic
+        natus autem labore dolorum optio! Quo quos, cum nostrum architecto
+        inventore explicabo omnis corporis voluptatibus error quisquam sequi
+        dolorem, sapiente quis tempora cumque harum!
+      </p>
+    </section>
+  </body>
+</html>

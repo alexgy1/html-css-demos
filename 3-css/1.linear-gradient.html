@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        width: 300px;
+        height: 150px;
+        background-image: linear-gradient(blue, red);
+      }
+
+      .box.box2 {
+        object-fit: contain;
+        background-image: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0) 21%,
+          rgba(0, 0, 0, 0.4)
+        );
+      }
+
+      .box.b2t {
+        background: linear-gradient(0deg, blue, red);
+      }
+      .box.rb2lt {
+        background: linear-gradient(to left top, blue, red);
+      }
+
+      .seven {
+        background: linear-gradient(
+          to right,
+          red,
+          orange,
+          yellow,
+          green,
+          blue,
+          indigo,
+          violet
+        );
+      }
+      .grad {
+        width: 300px;
+        height: 200px;
+        margin-top: 40px;
+        background-color: #f07575; /* 不支持渐变的浏览器回退方案 */
+        background-image: -webkit-linear-gradient(
+          top,
+          hsl(0, 80%, 70%),
+          #bada55
+        ); /* 支持 Chrome 25 and Safari 6, iOS 6.1, Android 4.3 */
+        background-image: -moz-linear-gradient(
+          top,
+          hsl(0, 80%, 70%),
+          #bada55
+        ); /* 支持 Firefox (3.6 to 15) */
+        background-image: -o-linear-gradient(
+          top,
+          hsl(0, 80%, 70%),
+          #bada55
+        ); /* 支持旧 Opera (11.1 to 12.0) */
+        background-image: linear-gradient(
+          to bottom,
+          hsl(0, 80%, 70%),
+          #bada55
+        ); /* 标准语法; 需要最新版本 */
+      }
+    </style>
+  </head>
+  <body>
+    <h1>从上到下 蓝 红 渐变</h1>
+    <div class="box"></div>
+
+    <h1>top to bottom rgba 0000</h1>
+    <div class="box box2"></div>
+
+    <h1>从下到上 蓝 红 渐变</h1>
+    <div class="box b2t"></div>
+
+    <h1>从右下到左上 蓝 红 渐变</h1>
+    <div class="box rb2lt"></div>
+
+    <div class="seven">A rainbow made from a gradient</div>
+
+    <div class="grad"></div>
+  </body>
+</html>

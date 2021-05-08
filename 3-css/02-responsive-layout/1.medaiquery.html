@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      media="screen and (max-width : 768px)"
+      href="mobile.css"
+    />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: serif;
+        background: gray;
+        color: white;
+        font-size: 60px;
+        text-align: center;
+        padding-top: 100px;
+      }
+
+      div {
+        display: none;
+      }
+      /* smartphone  */
+      @media (max-width: 500px) {
+        body {
+          background: red;
+        }
+        #smartphone {
+          display: block;
+        }
+      }
+
+      @media (min-width: 501px) and (max-width: 768px) {
+        body {
+          background: blue;
+        }
+        #table {
+          display: block;
+        }
+      }
+
+      /* normal */
+      @media (min-width: 769px) and (max-width: 1200px) {
+        body {
+          background: yellow;
+        }
+        #normal {
+          display: block;
+        }
+      }
+
+      /* widescreen */
+      @media screen and (min-width: 1201px) {
+        body {
+          background: skyblue;
+        }
+        #widescreen {
+          display: block;
+        }
+      }
+
+      /* landscape set height and screen  */
+      @media screen and (max-height: 500px) {
+        body {
+          background: orange;
+        }
+        #landscape {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="widescreen">widescreen</div>
+    <div id="normal">normal</div>
+    <div id="table">table</div>
+    <div id="smartphone">smartphone</div>
+    <div id="landscape">landscape</div>
+  </body>
+</html>

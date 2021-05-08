@@ -1,0 +1,10 @@
+<script>
+  Function.prototype.a = () => alert(1);
+  Object.prototype.b = () => alert(2);
+  function A() {}
+  //   A.prototype = Function.prototype; //need add this line
+  //   console.log();
+  const a = new A();
+  a.a();
+  a.b();
+</script>

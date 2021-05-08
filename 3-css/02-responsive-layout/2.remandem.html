@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>em and rem</title>
+    <style>
+      #box1 {
+        font-size: 20px;
+      }
+      #box1 p {
+        /* 以父元素 20px为准 * 1.5 得到的 30px */
+        font-size: 1.5em;
+        /* p 的padding的1em是以p本身30px为基准 参考的 所以是30px */
+        padding: 1em;
+      }
+      #box1 ul {
+        font-size: 1.2em;
+      }
+
+      html {
+        /* google chrome defalut font-size 12px 可以改浏览器的设置 */
+        /* font-size: 10px; */
+        font-size: 62.5%;
+      }
+
+      #box2 h3 {
+        /* 16 *2 = 32px */
+        font-size: 2rem;
+      }
+      #box2 p {
+        font-size: 1.6rem;
+        line-height: 1.7rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div id="box1">
+      <h3>box one</h3>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque facere
+        aut, possimus iusto optio illum, minus earum animi ab sint
+        necessitatibus impedit ratione accusantium numquam assumenda fuga saepe
+        architecto quam?
+      </p>
+      <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>
+          <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>
+              <ul>
+                <h1>里面的ul的font-size 根据外部ul 24px * 1.2 得到28.8px</h1>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>4</li>
+      </ul>
+    </div> -->
+    <div id="box2">
+      <h3>box two</h3>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque facere
+        aut, possimus iusto optio illum, minus earum animi ab sint
+        necessitatibus impedit ratione accusantium numquam assumenda fuga saepe
+        architecto quam?
+      </p>
+    </div>
+  </body>
+</html>

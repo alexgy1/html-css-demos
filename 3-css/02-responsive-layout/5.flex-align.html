@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #container {
+        display: flex;
+        /*项目在主轴上的对齐方式 */
+        justify-content: space-between;
+        /* 
+        defalut : flex-start
+        space-around 两边有留白
+        space-between 两边没有留白 项目与项目之间的距离相等
+        */
+        height: 600px;
+        /* 交叉轴的对齐方式 */
+        align-items: baseline;
+        /* 
+        stretch deflaut 
+         */
+        flex-wrap: wrap;
+        background: #555;
+
+        align-content: stretch;
+        /* 
+        stretch defalut 
+        center
+        flex-start
+        flex-end
+         */
+      }
+
+      .item {
+        /* width: 100px;  等价于 flex-basis */
+        flex-basis: 200px;
+        margin: 0.75rem;
+        border: 1px solid #ccc;
+        background: #f4f4f4;
+        padding: 1rem;
+        text-align: center;
+      }
+
+      .c2 {
+        /* 对单个设置 
+        auto defalut value*/
+        align-self: flex-end;
+      }
+
+      .c1 {
+        /* default is 0  */
+        order: 3;
+      }
+      .c2 {
+        order: 2;
+      }
+      .c3 {
+        order: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div class="item c1">
+        <h1>item1</h1>
+      </div>
+      <div class="item c2">
+        <h1>item2</h1>
+      </div>
+      <div class="item c3">
+        <h1>item3</h1>
+      </div>
+    </div>
+  </body>
+</html>

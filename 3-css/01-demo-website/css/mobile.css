@@ -1,0 +1,64 @@
+/* navbar */
+#navbar h1 {
+  float: none;
+  text-align: center;
+}
+#navbar ul,
+#navbar ul li {
+  float: none;
+}
+
+#navbar ul li a {
+  padding: 5px;
+  border-bottom: 1px dashed #444;
+}
+
+/* show case  */
+
+#showcase .showcase-container {
+  padding-top: 70px;
+  padding-bottom: 30px;
+}
+
+#showcase .showcase-container h1 {
+  font-size: 40px;
+  line-height: 1.2em;
+}
+/* home info  */
+#home-info .info-img {
+  display: none;
+}
+
+#home-info .info-content {
+  width: 100%;
+}
+
+/* features */
+.box {
+  float: none;
+  width: 100%;
+}
+
+/* about info */
+
+#about-info .l,
+#about-info .r {
+  float: none;
+  width: 100%;
+}
+.l-heading {
+  text-align: center;
+}
+
+#about-info .r {
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+/* contact-info */
+
+#contact-info .box {
+  border-bottom: gray dotted 1px;
+}
+
+/* pc 手机模式 都看一下 横屏的时候也看一下 */

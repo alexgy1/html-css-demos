@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #container {
+        display: flex;
+        /* flex-direction: row defalut  */
+        /* flex-direction: row-reverse; */
+
+        /* flex-wrap: wrap; */
+
+        /* flex direction flex wrap 的结合 */
+        flex-flow: row wrap;
+      }
+      .item {
+        /* flex 1 占满一行 
+        flex grow  定义项目放大比例
+        flex shrink  定义项目缩小
+        flex basic  默认基准值
+        
+        default 0 1 auto 的简写*/
+        flex: 1;
+        background: #f4f4f4;
+        border: #ccc solid 1px;
+        padding: 1rem;
+        text-align: center;
+        margin: 0.75rem;
+      }
+
+      .item:first-child {
+        flex: 3;
+      }
+      #f {
+        display: flex;
+        flex-direction: column;
+      }
+      #f .s {
+        /* display: inline-block;
+        width: 100px;
+        height: 100px;
+        background-color: red; */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div class="item">
+        <h1>item1</h1>
+      </div>
+      <div class="item">
+        <h1>item2</h1>
+      </div>
+      <div class="item">
+        <h1>item3</h1>
+      </div>
+      <div class="item">
+        <h1>item2</h1>
+      </div>
+      <div class="item">
+        <h1>item3</h1>
+      </div>
+      <div class="item">
+        <h1>item2</h1>
+      </div>
+      <div class="item">
+        <h1>item3</h1>
+      </div>
+      <div class="item">
+        <h1>item2</h1>
+      </div>
+      <div class="item">
+        <h1>item3</h1>
+      </div>
+      <div class="item">
+        <h1>item2</h1>
+      </div>
+      <div class="item">
+        <h1>item3</h1>
+      </div>
+      <div class="item">
+        <h1>item2</h1>
+      </div>
+      <div class="item">
+        <h1>item3</h1>
+      </div>
+      <div class="item">
+        <h1>item2</h1>
+      </div>
+      <div class="item">
+        <h1>item3</h1>
+      </div>
+    </div>
+
+    <div id="f">
+      <span class="s">1</span>
+      <span class="s">2</span>
+      <span class="s">3</span>
+    </div>
+  </body>
+</html>
