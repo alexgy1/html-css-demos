@@ -1,0 +1,52 @@
+#what .courses {
+  display: block;
+}
+
+#what .courses .course {
+  display: flex;
+  text-align: left;
+}
+
+#what .courses .course i {
+  margin-right: 1.3rem;
+  align-self: center;
+  margin-bottom: 0;
+}
+
+/* smartphones */
+@media (max-width: 500px) {
+  #navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+  #navbar ul {
+    justify-content: center;
+  }
+  #navbar h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  #who {
+    display: block;
+  }
+
+  /* need set img height */
+  #who .who-img {
+    height: 300px;
+  }
+
+  #client .items .item img {
+    width: 80%;
+  }
+  #client .items .item:last-child {
+    display: none;
+  }
+
+  #contact {
+    flex-direction: column;
+  }
+  #contact .contact-img {
+    display: none;
+  }
+}

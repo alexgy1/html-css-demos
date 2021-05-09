@@ -1,0 +1,9 @@
+/* what */
+
+/* not used now  */
+#what .courses .course {
+  display: flex;
+}
+#contact .contact-img {
+  flex: 2;
+}

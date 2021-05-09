@@ -4,6 +4,9 @@
   margin: 0;
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.4;
@@ -39,6 +42,69 @@ p {
 }
 .btn:hover {
   background-color: orangered;
+}
+
+.py1 {
+  padding: 1.5rem 0;
+}
+
+.py2 {
+  padding: 2rem 0;
+}
+.py3 {
+  padding: 3rem 0;
+}
+
+.p1 {
+  padding: 1.5rem;
+}
+
+.p2 {
+  padding: 2rem;
+}
+.p3 {
+  padding: 3rem;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 0 2rem;
+}
+
+.m-heading {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.1;
+}
+
+.bg-light {
+  background: #f4f4f4;
+  color: #333;
+}
+.bg-dark {
+  background: #333;
+  color: white;
+}
+.bg-primary {
+  background: orange;
+}
+.btn-dark {
+  background: #333;
+  color: #fff;
+}
+.list {
+  list-style: none;
+  margin: 0.5rem 0;
+}
+
+.list li {
+  padding: 0.5rem 0;
+  border-bottom: 1px dashed #444;
+}
+.text-center {
+  text-align: center;
 }
 /* navbar */
 #navbar {
@@ -93,4 +159,108 @@ p {
   left: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* what */
+#what {
+}
+#what h1 {
+  text-align: center;
+}
+
+#what .courses {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#what .courses .course {
+  flex: 1;
+  text-align: center;
+  padding: 1rem;
+}
+#what .courses .course i {
+  background: orange;
+  padding: 1rem;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+/* who */
+#who {
+  display: flex;
+}
+
+#who div {
+  flex: 1;
+  /* 保持均分 */
+  flex-basis: 50%;
+}
+
+#who .who-img {
+  background: url("../../01-demo-website//img/cai1.jpeg") no-repeat center
+    center/cover;
+}
+
+/* client */
+#client h2 {
+  text-align: center;
+}
+#client .items {
+  display: flex;
+}
+#client .items .item {
+  flex: 1;
+}
+#client .items .item img {
+  width: 70%;
+  display: inline-block;
+  margin: 0 auto;
+  border-radius: 50%;
+  text-align: center;
+}
+
+/* contact */
+#contact {
+  display: flex;
+}
+
+#contact .contact-form,
+#contact .contact-img {
+  flex: 1;
+  flex-basis: 50%;
+}
+
+#contact .contact-form .form-control {
+  margin: 0.75rem 0;
+}
+
+#contact .contact-form label {
+  display: block;
+}
+
+#contact .contact-form input,
+#contact .contact-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+}
+
+#contact .contact-img {
+  background: url("../../01-demo-website/img/cai2.jpeg") no-repeat center
+    center/cover;
+}
+
+.back {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  border-radius: 50%;
+  color: white;
+  background: orange;
+}
+.back a {
+  color: white;
 }
